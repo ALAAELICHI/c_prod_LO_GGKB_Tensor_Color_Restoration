@@ -1,0 +1,1244 @@
+%%%%%%%%%%%%%%%%%%%%%%%% file template.tex
+\documentclass{siamltex}
+%
+\usepackage[dvips]{graphicx}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{algorithm,algorithmic}
+\usepackage{epsfig}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+%!TeX spellcheck = en_GB 
+%--------numbring equations-----------
+%\numberwithin{equation}{section}
+%-------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newtheorem{proposition}{Proposition}[section]
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{definition}{Definition}[section]
+% \newtheorem{lemma}{Lemma}[section]
+% \newtheorem{corollary}{Corollary}[section]
+%\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{remark}{Remark}[section]
+
+\textwidth 14.5cm 
+\textheight 21cm
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\parindent 0.5cm
+%\textwidth 16cm
+%\textheight 20cm
+%\evensidemargin -0.1cm
+%\oddsidemargin -0.1cm
+
+
+%moore pensore inverse
+\makeatletter
+\newcommand{\ssymbol}[1]{^{\@fnsymbol{#1}}}
+\makeatother
+
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\range}{\rm{range}}
+%\newcommand{\rank}{\rm{rank}}
+\newcommand{\tol}{\rm{tol}}
+\newcommand{\mH}{\mathcal{H}}
+\newcommand{\mV}{\mathcal{V}}
+\newcommand{\mW}{\mathcal{W}}
+\newcommand{\mS}{\mathcal{S}}
+\newcommand{\mT}{\mathcal{T}}
+\newcommand{\mL}{\mathcal{L}}
+\newcommand{\mA}{\mathcal{A}}
+\newcommand{\mB}{\mathcal{B}}
+\newcommand{\mC}{\mathcal{C}}
+\newcommand{\mD}{\mathcal{D}}
+\newcommand{\mE}{\mathcal{E}}
+\newcommand{\mF}{\mathcal{F}}
+\newcommand{\mG}{\mathcal{G}}
+\newcommand{\mM}{\mathcal{M}}
+\newcommand{\mK}{\mathcal{K}}
+\newcommand{\mP}{\mathcal{P}}
+\newcommand{\mR}{\mathcal{R}}
+\newcommand{\mZ}{\mathcal{Z}}
+\newcommand{\Leg}{{\mathcal L(E,G)}}
+\newcommand{\Lef}{{\mathcal L(E,F)}}
+\newcommand{\Lfg}{{\mathcal L(F,G)}}
+\newcommand{\Le}{{\mathcal L(E)}}
+\newcommand{\I}{{\mathcal{I}}}
+\newcommand{\ia}{{\mathfrak I}}
+\newcommand{\vi}{\emptyset}
+\newcommand{\di}{\displaystyle}
+\newcommand{\Om}{\Omega}
+\newcommand{\na}{\nabla}
+\newcommand{\wi}{\widetilde}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\e}{\epsilon}
+\newcommand{\la}{\lambda}
+\newcommand{\De}{\Delta}
+\newcommand{\de}{\delta}
+\newcommand{\entraine}{\Longrightarrow}
+\newcommand{\inj}{\hookrightarrow}
+\newcommand{\recip}{\Longleftarrow}
+\newcommand{\ssi}{\Longleftrightarrow}
+\newcommand{\K}{\mathbbm{K}}
+
+\newcommand{\A}{\mathcal{A}}
+%\newcommand{\R}{\mathbb{R}}
+%\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\1}{\mathbb{1}}
+\newcommand{\0}{\mathbb{0}}
+\newcommand{\Z}{\mathbbm{Z}}
+\newcommand{\E}{\mathbbm{E}}
+\newcommand{\F}{\mathbbm{F}}
+\newcommand{\B}{\mathbbm{B}}
+\newcommand{\M}{\mathcal{M}_{n}(\K)}
+\def\ent{{{\rm Z}\mkern-5.5mu{\rm Z}}}
+\newtheorem{exo}{Exercice}
+%\newtheorem{lem}{Lemme}[section]
+\newtheorem{rem}{Remarque}
+\newtheorem{pre}{Preuve}
+\newtheorem{pro}{Propriété}
+\newtheorem{exe}{Exemple}
+\usepackage[mathscr]{euscript}
+%\textwidth 14.5cm 
+%\textheight 20cm
+%
+%
+%%\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+%%\renewcommand{\algorithmicensure}{\textbf{Output:}}
+%%\newcommand{\Input}{\REQUIRE}
+%%\newcommand{\Output}{\ENSURE}
+%%
+\title{The Fast Cosine Golub-Kahan method for  color  image processing}
+\author{M. El Guide \thanks{Centre for Behavioral Economics and Decision Making(CBED), FGSES, Mohammed VI Polytechnic University, Green City, Morocco} \and A. El Ichi\footnotemark [3]\thanks{Department of Mathematics University Mohammed V Rabat, Morocco}   \and K. Jbilou\footnotemark[1] \thanks{LMPA, 50 rue F. Buisson, ULCO Calais, France; Mohammed VI Polytechnic University, Green City, Morocco; jbilou@univ-littoral.fr }}
+
+\date{}
+
+
+
+\begin{document}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	%
+	% % !TeX spellcheck = en_GB
+	
+	%
+	%
+	%
+	% %--------numbring equations-----------
+	% %\numberwithin{equation}{section}
+	% %-------------------------------------
+	%
+	% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% % \newtheorem{proposition}{Proposition}[section]
+	% % \newtheorem{theorem}{Theorem}[section]
+	% % \newtheorem{definition}{Definition}[section]
+	% % \newtheorem{lemma}{Lemma}[section]
+	% % \newtheorem{corollary}{Corollary}[section]
+	% %\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+	%% \newtheorem{remark}{Remark}[section]
+	%
+	% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% %\parindent 0.5cm
+	%\textwidth 17cm
+	% %\textheight 20cm
+	% %\evensidemargin -0.1cm
+	% %\oddsidemargin -0.1cm
+	%
+	
+	
+	
+	\maketitle
+	
+	
+	
+	%	\date{Received: date / Accepted: date}
+	% The correct dates will be entered by the editor
+	
+	
+	%\maketitle
+	
+	\begin{abstract}    
+%		The present paper is concerned with  developing tensor iterative Krylov subspace methods to solve large
+%		multi-linear tensor equations.  We use the  cosine product for two tensors to define tensor  tubal global  Gloub-Kahan bidiagonalization algorithm.  Furthermore,  we illustrate how tensor–based global approaches can be exploited
+%		to solve ill-posed problems arising from
+%		recovering blurry multichannel
+%		(color) images  and videos, using the so-called Tikhonov regularization technique, to provide computable approximate
+%		regularized solutions. We also review a generalized cross-validation and discrepancy principle type  of criterion for the selection of
+%		the regularization parameter in the Tikhonov regularization. Applications
+%		to image sequence processing are given to demonstrate the efficiency of the algorithms.
+	\end{abstract}   
+	
+	
+	\noindent {\bf Keywords.}  Krylov subspaces, Linear tensor equations,  Tensors, c-product.
+	
+	
+	% \end{frontmatter}
+	
+	
+	\medskip
+	
+	\noindent {\bf AMS Subject Classification} { 65F10, 65F22. }
+	%====================================================================
+	
+	%===========
+	%\vspace*{1cm}*
+	
+	
+	
+	\section{Introduction}
+	The aim of this paper is to solve the following tensor problem
+	
+	\begin{equation}\label{eq1}
+\displaystyle \min_{\mathscr{X}} \Vert 	{\mathcal M} (\mathscr{X})-  \mathscr{C} \Vert_F
+	\end{equation}
+	where  ${\mathcal M}$ is a linear operator  that could be described as 
+	\begin{equation}\label{eq2}
+	{\mathcal M} (\mathscr{X}) = \mathscr{A} \star_c\mathscr{X},\; {\rm or}\; 	{\mathcal M} (\mathscr{X}) = \mathscr{A} \star_c\mathscr{X}\star_c\mathscr{B},
+	\end{equation}
+	where $\mathscr{A}$, $\mathscr{X}$, $\mathscr{B}$ and $\mathscr{C}$ are  three-way tensors, leaving the specific dimensions to be defined later,  and $\star_c$ is the cosine product to be also defined later. Applications involving those mathematical problems arise in  signal processing \cite{lb},  data mining \cite{lxnm},  computer vision \cite{vt1, vt2} and graph analysis \cite{kolda2}.  For those applications, and so many more, one  have to take advantage of this multidimensional structure to build rapid and robust iterative methods for solving large-scale problems. We will then, be  interested
+	in  developing robust and fast iterative  tensor  Krylov based subspace methods under tensor-tensor product framework between third-order
+	tensors, to solve regularized problems originating from color image and  video processing applications. Standard and global Krylov subspace methods are suitable  when dealing with grayscale images, e.g, \cite{belguide, belguide2, reichel2,reichel1}. However, these methods might be time consuming to numerically solve problems related to multi channel images (e.g. color images, hyper-spectral images and videos). \\
+	
+%	For the Einstein product, both the Einstein tensor global   Arnoldi and Einstein
+%	tensor global  Gloub-Kahan bidiagonalization algorithms have been established \cite{Elguide}, which makes so  natural to generalize these methods using the T-product. 
+	 In this paper, we will show that the
+	tensor-tensor product  between third-order
+	tensors allows the application of the global iterative methods, such as the global Arnoldi and global Golub-Kahan algorithms. The tensor form of the proposed Krylov methods, together with using the fast
+cosine  transform (DCT) to compute the c-product between third-order
+	tensors can be efficiently implemented on many modern computers and allows to significantly reduce the overall computational complexity. It is also worth mentioning that our approaches can be naturally generalized to higher-order tensors in a recursive manner.\\
+	
+\noindent The paper is organized as follows. We shall first   present in  Section 2 
+	some symbols and notations used throughout paper. We also recall the concept of the c-product  between two tensors. 
+%	 In Section 3, we define tensor global  Arnoldi and tensor global Golub-Kahan algorithms that allow the use of the T-product.
+%	 Section 4 reviews on  the adaptation of Tikhonov regularization for the  tensor equation (\ref{eq1}) and then proposing a restarting strategy of  the  tensor global GMRES  and tensor  global Golub-Kahan approaches  in connection with Gauss-type quadrature rules to inexpensively  compute  solutions  of the regularization of (\ref{eq1}).  
+%	 In Section 5, we give  a tensor formulation in the form of (\ref{eq1}) that  describes the cross-blurring of color image and  then we present a few numerical examples on restoring blurred and noisy color images and videos. Concluding remarks can be found in Section 6. 
+	%In the last few years,  several iterative methods   have been proposed for solving large and sparse  linear and nonlinear systems of equations. When an iterative process converges slowly, the
+	%extrapolation methods are required to obtain rapid convergence. The  purpose of vector extrapolation methods is  to transform a sequence of vector or matrices generated by some process to a new one  that  converges faster than the initial sequence.   The well known extrapolation methods  can be  classified into two categories, the polynomial methods that  includes   the minimal polynomial extrapolation (MPE) method of Cabay and Jackson \cite{B101}, the modified minimal  polynomial extrapolation (MMPE) method of Sidi, Ford ans Smith \cite{B0301}, the reduced rank extrapolation (RRE) method of Eddy \cite{B03} and Mesina \cite{B3011},  Brezinski \cite{B0032}  and Pugatchev \cite{B132}, and  the $\epsilon$-type algorithms including the topological $\epsilon$-algorithm  of Brezinski \cite{B0032} and the vector $\epsilon$-algorithm of Wynn \cite{Wynn}. \\
+	%Efficient implementations of some of these extrapolation methods have been proposed by Sidi \cite{B03005}  for the RRE and MPE  methods using QR decomposition while Jbilou and sadok \cite{B350} gives   an efficient implementation of the MMPE based on a LU  decomposition with pivoting strategy. It was also shown  that when applied to linearly generated vector sequences, RRE  and TEA methods are mathematically equivalent to GMRES and Lanczos methods, respectively.  Those results were also extended to the block and global cases when dealing with matrix sequences, see \cite{B2071,B360}. Our aim in this paper is to define the analogue of these vector and matrix extrapolation methods to the tensor framework.\\
+	%A tensor is  a multidimensional array of data. Notice that  a scalar is a $0^{th}$  order tensor, a vector is a  $1^{th}$order tensor and a matrix is   $2^{th}$ order tensor. The tensor  order is  the number of its indices, which is called modes or ways. For a given N-mode tensor $  \mathscr {X}\in \mathbb{R}^{n_{1}\times n_{2}\times n_{3}\ldots \times n_{N}}$, the notation $x_{i_{1},\ldots,i_{N}}$ (with $1\leq i_{j}\leq n_{j},\; j=1,\ldots N $) stand for the element $\left(i_{1},\ldots,i_{N} \right) $ of the tensor $\mathscr {X}$. Corresponding to a given tensor $ \mathscr {X}\in \mathbb{R}^{n_{1}\times n_{2}\times n_{3}\ldots \times n_{N}}$, the notation $$ \mathscr {X}_{\underbrace{:,:,\ldots,:}_{(N-1)-\text{ times}}k}\; \; {\rm for }  \quad k=1,2,\ldots,n_{N}$$ denotes a tensor in $\mathbb{R}^{n_{1}\times n_{2}\times n_{3}\ldots \times n_{N-1}}$ which is obtained by fixing the last index and is called frontal slice. Fibers are the higher-order analogue of matrix rows and columns. A fiber is
+	% 	defined by fixing all the indexes  except  one. A matrix column is a mode-1 fiber and a
+	% 	matrix row is a mode-2 fiber. Third-order tensors have column, row, and tube fibers. An element $c\in \mathbb{R}^{1\times 1 \times n}$ is called a tubal--scalar of length $n$ \cite{B029}.
+	% 	\\
+	% 	We denote by $X_{i}=\mathscr {X}(:,:,i) \;\; i=1,\ldots,n_{3}$
+	% 	, is the i-frontal slice of $\mathscr {X}$, $\bar{X}_{j}=\mathscr{X}(:,j,:) \in \mathbb{R}^{n_{1}\times 1\times n_{3}} $ the j-lateral slice of $\mathscr {X} $ and $ {x}(i,j,:) \in \mathbb{R}^{1\times 1\times n_{3}} $ the (i,j)-tube fibers of $\mathscr {X} $. There has been a lot of research works on tensors in \cite{B129,B031}.   \\
+	% 	The norm of a tensor $\mathscr{X}\in \mathbb{R}^{n_1\times n_2\times \cdots \times n_\ell}$ is specified by
+	% 	\[
+	% 	\left\| \mathscr{X} \right\|^2 = {\sum\limits_{i_1  = 1}^{n_1 } {\sum\limits_{i_2  = 1}^{n_2 } {\cdots\sum\limits_{i_\ell = 1}^{n_\ell} {x_{i_1 i_2 \cdots i_\ell }^2 } } } }^{} .
+	% 	\]
+	
+	% 	\begin{figure}[!h]
+	% 		\begin{center}
+	% 			\includegraphics[scale=0.4]{fibres123.png}
+	% 			\caption{ Third order tensor fibers }
+	% 			\label{fig:fibre111}
+	% 		\end{center}
+	% 	\end{figure}
+	% 	\begin{figure}[!h]
+	% 		\begin{center}
+	% 			\includegraphics[scale=0.4]{slices123.png}
+	% 			\caption{ Third order tensor slices  }
+	% 			\label{fig:slices111}
+	% 		\end{center}
+	% 	\end{figure}
+	%% 	The \textbf{T-Product}   have attracted tremendous interest
+	%% 	in recent years. Indeed, this new tool is   closely related to
+	%%   a number of fields of practical interest,
+	%% 	i.e., signal processing \cite{B01,B02,B03,B04}, scientific computer vision \cite{B001,B010,B05,B051}, data  completion  \cite{B012,B025,B026,B035,B03,B039,B041,B051,B056}, image processing and google Page-Rank \cite{M01,B056}\\
+	%\noindent Basically, in the present paper, we develop some tensor extrapolation methods namely, the Tensor RRE (TRRE), the Tensor MPE (TMPE), the Tensor MMPE (TMMPE) and the Tensor Topological $\epsilon$-Algorithm (TTEA). We give some properties and show how these new tensor extrapolation methods can be applied to sequences obtained by truncation of the Tensor Singular Value Decomposition (TSVD) when applied to linear tensor discrete ill-posed problems.\\
+	%
+	\section{Definitions and Notations} A tensor is  a multidimensional array of data. The number of indices of a tensor is called modes or ways. 
+	Notice that a scalar can be regarded as a zero mode tensor, first mode tensors are vectors and matrices are second mode tensor. The order of a tensor is the dimensionality of the array needed to represent it, also known as
+	ways or modes. 
+	For a given N-mode (or order-N) tensor $ \mathscr {X}\in \mathbb{R}^{n_{1}\times n_{2}\times n_{3}\ldots \times n_{N}}$, the notation $x_{i_{1},\ldots,i_{N}}$ (with $1\leq i_{j}\leq n_{j}$ and $ j=1,\ldots N $) stands for the element $\left(i_{1},\ldots,i_{N} \right) $ of the tensor $\mathscr {X}$.  \\  Fibers are the higher-order analogue of matrix rows and columns. A fiber is
+	defined by fixing all the indexes  except  one. A matrix column is a mode-1 fiber and a matrix row is a mode-2 fiber. Third-order tensors have column, row and tube fibers. An element $c\in \mathbb{R}^{1\times 1 \times n}$ is called a tubal-scalar of length $n$. More details are found in  \cite{kimler1,kolda1}.  \\ In the present paper, we will consider only 3-order tensors and show how to use them in color image and video processing.
+	
+
+
+
+	\subsection{\textcolor{red}{\bf {Discrete Cosine Transformation}}
+\Large A developper}
+	
+
+	
+	
+	
+	\subsection{\textcolor{red}{\bf {Definitions and properties of the cosine product}}
+\Large A developper}	
+
+
+	
+	\begin{algorithm}[!h]
+		\caption{Computing the  T-product via DCT}\label{algo1}
+		Inputs: $\mathscr {A} \in \mathbb{R}^{n_{1}\times n_{2}\times n_{3}} $ and $\mathscr {B} \in \mathbb{R}^{n_{2}\times m\times n_{3}} $\\
+		Output: $\mathscr {C}= \mathscr {A} \star_c \mathscr {B}  \in \mathbb{R}^{n_{1}\times m \times n_{3}} $
+		\begin{enumerate}
+			\item Compute $\mathscr {\widetilde A}={\tt dft}(\mathscr {A},[ \;],3)$ and $\mathscr {\widetilde B}={\tt dft}(\mathscr {B},[\; ],3)$.
+	\textcolor{red}{\bf 	\item Compute each frontal slices of $\mathscr {\widetilde C}$		
+			\item Compute $\mathscr {C}={\tt idct}(\widetilde {C},[\;],3)$.	 	}
+		\end{enumerate}
+	\end{algorithm}
+	
+	
+	
+
+
+	
+
+
+	
+	
+	
+	
+	\subsection{The tensor cosine-global Golub Kahan algorithm}
+	
+	\noindent Instead of using the tensor cosine-global Arnoldi to generate a basis for the projection subspace, we can define c-version of the tensor global Lanczos process. Here, we will use the tensor Golub Kahan algorithm related to the T-product. \\
+%We notice here that we already defined in \cite{Elguide} another version of the tensor Golub Kahan algorithm by using the $m$-mode or the Einstein products with applications to color image restoration.\\
+	Let $\mathscr{A} \in \mathbb{R}^{n\times \ell\times p}$  be a tensor and  let  $\mathscr{U}  \in \mathbb{R}^{\ell\times  s \times p}$ and  $\mathscr{V}  \in \mathbb{R}^{n\times  s \times p}$  two other given tensors. The Tensor T-global Golub Kahan bidiagonalization algorithm (associated to the T-product)  is defined as follows
+	
+%	\newpage 
+	\begin{algorithm}[h!]
+		\caption{The Tensor  cosine-global Golub Kahan algorithm}\label{TG-GK}
+		\begin{enumerate}
+			\item {\bf Input.} The tensors $\mathscr {A}$, $\mathscr{V}$, and $\mathscr {U}$ and an integer $m$.
+			\item 	Set $\beta_1= \Vert \mathscr{V}\Vert_F$, $\alpha_1= \Vert \mathscr {U}  \Vert_F$, $\mathscr {V}_1=\mathscr {V}/\beta_1$ and 
+			$\mathscr {U}_1=\mathscr {U}/\alpha_1$.
+			\item for $j=2,\ldots,m$
+			\begin{enumerate}
+				\item $\widetilde {\mathscr {V}}= \mathscr {A} \star_c \mathscr {U}_{j-1} -\alpha_{j-1}\mathscr {V}_{j-1}$
+				\item $\beta_j=\Vert \widetilde {\mathscr {V}}\Vert_F$ if $\beta_j=0$ stop, else
+				\item $\mathscr {V}_j=\widetilde {\mathscr {V}}/\beta_j$
+				\item $\widetilde {\mathscr {U}}=\mathscr {A}^T \star_c \mathscr {V}_j-\beta_j \mathscr{U} _{j-1}$
+				\item $\alpha_j=\Vert \widetilde {\mathscr {U}} \Vert_F$
+				\item if $\alpha_j=0$ stop, else
+				\item $\mathscr {U}_j=\widetilde {\mathscr {U}}/\alpha_j$.
+			\end{enumerate}
+		\end{enumerate}
+		
+	\end{algorithm}
+	
+	\medskip 
+	
+	\noindent Let $\widetilde{C}_m$ be the upper bidiagonal $((m+1) \times m  )$ matrix 
+	$$ \widetilde{ {   {C}}}_m=\left[ \begin{array}{*{20}{c}}
+	{{{\alpha}_1  }}&{{ }}& &   \\
+	{\beta}_{2}&{{{\alpha}_2}}&\ddots& \\
+	&\ddots&\ddots& \\
+	&   & {\beta}_{m}  &  {\alpha}_{m}\\
+	&    &       &    {\beta}_{m+1}
+	\end{array}  \right] 
+	$$
+	and let $ {{{C}}}_m$ be the $(m \times m )$ matrix obtain   by deleting  the last row of  $\widetilde{{   {C}}}_m$. We denote by  $C_{.,j}$  the $j$-th column of the matrix  $C_m$. Let  $\mathbb{U}_{m}  $ and $\mathscr{A}\star_c\mathbb{U}_{m}  $ be the $(\ell\times (sm)\times p)$ and   $(n\times (sm)\times p)$ tensors with frontal slices $\mathscr{U}_{1},\ldots,\mathscr{U}_{m}$ and  $\mathscr{A}\star_c\mathscr{U}_{1},\ldots,\mathscr{A}\star_c\mathscr{U}_{m}$, respectively, and let  $\mathbb{V}_{m}  $ and $\mathscr{A}^T\star_c\mathbb{V}_{m}  $ be the $(n\times (sm)\times p)$ and $(\ell\times (sm)\times p)$  tensors with frontal slices $\mathscr{V}_{1},\ldots,\mathscr{V}_{m}$ and  $\mathscr{A}^T\star_c\mathscr{V}_{1},\ldots,\mathscr{A}^T\star_c\mathscr{V}_{m}$, respectively. We set  
+	\begin{align}
+	\label{ev12}
+	\mathbb{U}_{m}:&=\left[  \mathscr{U}_{1},\ldots,\mathscr{U}_{m}\right], \;\;\; {\rm and}\;\;\; \mathscr{A}\star_c\mathbb{U}_{m}:=[\mathscr{A}\star_c\mathscr{U}_{1},\ldots,\mathscr{A}\star_c\mathscr{U}_{m}],\\
+	\mathbb{V}_{m}:&=\left[  \mathscr{V}_{1},\ldots,\mathscr{V}_{m}\right], \;\;\; {\rm and} \;\;\; \mathscr{A}^T\star_c\mathbb{V}_{m}:=[\mathscr{A}^T\star_c\mathscr{V}_{1},\ldots,\mathscr{A}^T\star_c\mathscr{V}_{m}].
+	\end{align}
+	\noindent  Then, the following proposition can be established\\
+	
+	\begin{proposition}\label{proptggkb} 
+		The tensors produced by the tensor T-global Golub-Kahan algorithm satisfy the following relations
+		\begin{eqnarray} \label{equa20}
+		\mathcal {A} \star_c \mathbb{U}_m& = &\mathbb{V}_{m+1} \circledast {\widetilde { {   {C}}}}_m   ,    \\
+		& = &\mathbb{V}_m\circledast{  { {   {C}}}}_m  + {\beta}_{m+1}  \left[  \mathscr{O}_{n\times s\times p},\ldots,\mathscr{O}_{n\times s\times p},\mathscr{V}_{m+1}\right], \\
+		%	\begin{eqnarray} \label{equa30}
+		\mathscr{A}^{T}\star_c\mathbb{V}_{m}& = &\mathbb{U}_m  \circledast {\widetilde { {   {C}}}}_m^T .  
+		\end{eqnarray}
+	\end{proposition} 
+	
+	\begin{proof}
+		Using $\mathscr{A}\star_c\mathbb{U}_{m}=[\mathscr{A}\star_c\mathscr{U}_{1},\ldots,\mathscr{A}\star_c\mathscr{U}_{m}] \in  \mathbb{R}^{n \times (sm)\times n_{3}} $ , the ($j-1$)-th frontal slice    of $(\mathscr{A}\star_c\mathbb{U}_{m})$ is given by   $$ (\mathcal {A} \star_c \mathbb{U}_m)_{j-1} =\mathscr {A} \star_c \mathscr {U}_{j-1}= {\alpha }_{j-1} \mathscr {V}_{j-1}+{\beta }_j \mathcal {V}_{j}.$$
+		Furthermore, from the definition of the $\circledast$ product, we have
+		\begin{align*}
+		(\mathbb{V}_{m+1}   \circledast \widetilde{ { C}}_{m})_{j-1}&=\mathbb{V}_{m+1}\circledast C_{.,j-1},\\
+		%	&= \sum_{i =1}^{j+1}c_{i,j-1} \mathscr{V}_{i},\\
+		&={\alpha }_{j-1} \mathscr {V}_{j-1}+{\beta }_j \mathcal {V}_{j}
+		\end{align*}
+		and for $j=m$,  $\mathbb{U}_{m} \circledast \mathscr{C}_{.,m}= \mathscr{A}\star_c \mathscr{U}_{m}+{\beta}_{m+1} \mathscr{V}_{m+1} $ and the result follows. 
+		The other relations are proven is a similar way.
+%		To derive (4.5) , one may first
+%		notice that from Algorithm \ref{TG-GK}, we  have  $$(\mathcal {A}^T \star_c \mathbb{V}_m)_{j} =\mathscr {A} ^T\star_c \mathscr {V}_{j}= {\alpha }_{j} \mathscr {U}_{j}+{\beta }_j \mathcal {U}_{j-1}.$$
+%		Considering now the $j$-th frontal slice of the right-hand side
+%		of (4.5), the assertion can be easily deduced .
+	\end{proof}
+	
+	
+	
+%	\textcolor{blue}{ \section{ Tensor Tubal-Global GMRES }
+%		\medskip
+%		\noindent In this section, we define the Tensor Tubal-Global Arnoldi process that could be considered as a generalization of the global Arnoldi process. The main  difference between the  Tubal-Global Arnoldi  and  the T-Global Arnoldi  is  that for the latter, the  tensor Krylov subspace $\mathcal{\mathscr{TK}}_m(\mathscr{A},\mathscr{V} )$ associated to the T-product is  as follows
+%		\begin{equation}
+%		\label{tr30}
+%		\mathcal{\mathscr{TK}}_m(\mathscr{A},\mathscr{V} )= {\rm Tspan}\{ \mathscr{V}, \mathscr{A} \star_c\mathscr{V},\ldots,\mathscr{A}^{m-1}\star_c\mathscr{V} \}\\
+%		=\left\lbrace \mathscr{Z} \in \mathbb{R}^{n\times s \times n_3}, \mathscr{Z}= \sum_{i=1}^m \alpha_{i} \left(
+%		\mathscr{A}^{i-1}\star_c\mathscr{V}\right) \right\rbrace 
+%		\end{equation}
+%		where $\alpha_{i}\in \mathbb{R},\; i=1,\ldots,m $;   
+%		$\mathscr{A}\in \mathbb{R}^{n\times n \times n_3}$ and $\mathscr{V}\in \mathbb{R}^{n\times s \times n_3}$ ($s<<n$), while  for the Tubal Global Arnoldi process,  the tensor Tubal global Krylov  subspace  of order $m$  associated to the pair  ($\mathscr{A}$, $\mathscr{V}$) and denoted by $\mathscr{TK}^{g}_{m}(\mathscr{A},\mathscr{V})\subset   \mathbb{R}^{n\times s \times n_3}$  is defined as
+%		\begin{align}\label{ttgk0}
+%		\mathscr{TK}^{g}_{m}(\mathscr{A},\mathscr{V})&=\text{Tubal-Span}\left\lbrace \mathscr{V},\mathscr{A}\star_c\mathscr{V},\mathscr{A}^2\star_c\mathscr{V},\ldots,\mathscr{A}^{m-1}\star_c\mathscr{V}\right\rbrace, \\
+%		&=\left\lbrace \mathscr{Z} \in \mathbb{R}^{n\times s \times n_3},\;  \mathscr{Z}= \sum_{i=1}^m {\rm \bf a}_{i}\divideontimes(
+%		\mathscr{A}^{i-1}\star_c\mathscr{V}) \right\rbrace ,
+%		\end{align}
+%		where the  ${\rm \bf a}_{i}$'s are tubes in $ \mathbb{R}^{1\times 1 \times n_3}$.}
+%	\subsection{ New tensor products}
+%	\textcolor{blue}{\noindent We introduce in this subsection new tensor products that can be used for simplifying the algebraic relations of the main proposed results.} 
+%	\medskip
+%	\textcolor{blue}{\begin{definition}\cite{kimler1,kimler2}\label{inverstubscalar}
+%			Let ${\rm \bf z}\in {\mathbb R}^{1\times 1 \times n_{3}} $, then 
+%			the  tubal rank of  ${\rm \bf z}$ is the number of its
+%			non-zero Fourier coefficients. If the tubal-rank of ${\rm \bf z}$ is equal to  $n_3$, we say that  it is invertible and   we denote by $({\rm \bf z})^{-1}$	its inverse  which satisfies  ${\rm \bf z}\star_c({\rm \bf z})^{-1}=({\rm \bf z})^{-1}\star_c{\rm \bf z}={\rm \bf e}$.\\
+%	\end{definition}}
+%	
+%	
+%	
+%	\textcolor{blue}{ 	\begin{definition}\label{dfttubefibr012}  
+%			%	\begin{enumerate}
+%			Let  ${\rm \bf a}  \in {\mathbb R}^{1\times 1 \times n_{3}} $ and $\mathscr{B}  \in {\mathbb R}^{m_{1}\times m_{2} \times n_{3}}$. Then,  the   product $({\rm \bf a}\divideontimes\mathscr{B})$ is the  $(m_{1}\times m_{2} \times n_{3})$ tensor defined by 
+%			\begin{eqnarray*}
+%				{\rm \bf a}\divideontimes\mathscr{B} =\begin{pmatrix}
+%					{\rm \bf a}\star_c \mathscr{B}(1,1,:)   &\ldots&{\rm \bf a}\star_c \mathscr{B}(1,2,:)   \\
+%					\vdots&\ddots&\vdots \\
+%					{\rm \bf a}\star_c \mathscr{B}(m_{1},1,:)   &\ldots&{\rm \bf a}\star_c \mathscr{B}(m_{1},m_{1},:)  \\
+%				\end{pmatrix}.
+%			\end{eqnarray*}
+%			%			\item 	Let ${\mathscr{A}}  \in {\mathbb R}^{n_1\times n_2 \times n_{3}}$, ${\mathscr{B}}  \in {\mathbb R}^{m_1\times m_2 \times n_{3}}$, then    $  \mathscr{A}\circledcirc\mathscr{B}   $  is  the  tensor of size  ${\mathbb R}^{n_1m_1\times n_2m_2 \times n_{3}}$    defined by
+%			%			\begin{align*}
+%			%			(\mathscr{A}\circledcirc\mathscr{B} )_{i}&=  { {A}}_{i}\otimes { {B}}_{i} \;\; i=1,\ldots,n_3 \end{align*}
+%			%			where $\otimes$ is the Kronecker product  between two  matrices. The matrices  $  { {A}}_{i}$ and $ { {B}}_{i}$  are  the i-th frontal  slices  of $\mathscr{A}$ and $\mathscr{B}$,  respectively.
+%			%			\item 	Let
+%			%			$$\mathscr{A} =[\mathscr{A}_{1},\ldots,\mathscr{A}_{p}]; \qquad   \mathscr{A}_{i}: \; n_{1}\times s\times n_{3},\, i =1,...,p$$ %\hspace{6cm}
+%			%	$$	\mathscr{B} =[\mathscr{B}_{1},\ldots,\mathscr{B}_{l}]; \qquad  \mathscr{B}_{j}: n_{1}\times s\times n_{3},\,  j =1,...\ell$$
+%			%	then the product $\mathscr{A}^{T} \blacklozenge  \mathcal{B} $ is  the tensor of  size  $p \times  \ell \times n_{3}$ given by : 
+%			%	$$ (\mathscr{A}^{T} \blacklozenge \mathcal{B})_{i}  =  (  {A}_i  ^T\diamond {B}_i) \;\; i=1,...,n_3 
+%			%	$$ 
+%			%	where 	  $  {A}_i\in {\mathbb R}^{n_{1}\times ps} , {B}_i\in {\mathbb R}^{n_{1}\times \ell s } $ are the i-th frontal slices of $\mathcal{  {A}},\mathcal{ {B}}$, respectively    
+%			%	and $\diamond $ is the diamond product between two matrices; for more details on the  diamond product for matrices; see  \cite{Jbilousadaka}.
+%			%\end{enumerate} 
+%		\end{definition}
+%		\noindent In the following, we introduce the T-Kronecker product between two tensors as a generalization of the classical Kronecker product for matrices. 
+%		\medskip
+%		\noindent
+%		\begin{definition}{(T-Kronecker product )}
+%			Let	$\mathscr{A}   \in {\mathbb R}^{n_{1}\times n_{2} \times n_{3}} $ and   $\mathscr{B}\in {\mathbb R}^{m_{1}\times m_{2} \times n_{3}}$. Then  the T-Kronecker product  $\mathscr{A}\circledast \mathscr{B}$  between $ \mathscr{A}$ and $\mathscr{B}$ is  the $n_{1}m_{1}\times n_{2}m_{2} \times n_{3} $ tensor  given by	:
+%			\begin{equation*}
+%			(\mathscr{A}\circledast\mathscr{B})   = \text{{\tt ifft}} (\widetilde{(\mathscr{A}\circledast\mathscr{B})},[\,],3)        	\end{equation*}
+%			\noindent where the  $i$-th  frontal  slice ( $i=1,\ldots,n_3 $) of $  \widetilde{(\mathscr{A}\circledast\mathscr{B})} $ is  given  by, 
+%			\begin{equation*}
+%			\widetilde{(\mathscr{A}\circledast\mathscr{B})}^{(i)} = {A}^{(i)}\otimes   {B}^{(i)} %=  % {A}^{(i)}\otimes   {B}^{(i)}     .  
+%			\end{equation*}
+%			\noindent    and  $\otimes$ is the Kronecker product  between two  matrices. The matrices  $     {\mathscr {A}}  ^{(i)}$ and $  {\mathscr {B}}  ^{(i)}$  are  the i-th frontal  slices  of $\widetilde {\mathscr {A}}$ and $\widetilde {\mathscr {B}}$,   respectively.\\
+%	\end{definition}}
+%		\textcolor{blue}{\begin{proposition}\label{kronprop1}
+%			Let $\mathscr{A}\in {\mathbb R}^{n_{1}\times n_{2} \times n_{3}}$, $\mathscr{B}\in {\mathbb R}^ {m_{1}\times m_{2} \times n_{3}}$, $\mathscr{C}\in {\mathbb R}^{n_{2}\times r_{1} \times n_{3}}$ and $\mathscr{D}\in {\mathbb R}^{m_{2}\times r_{2} \times n_{3}}$. Then,  we have the following properties}	
+%		\textcolor{blue}{	\begin{enumerate}
+%				\item
+%				$(\mathscr{A}\circledast\mathscr{B})^{T}=\mathscr{A}^{T}\circledast  \mathscr{B}^{T}$
+%				\item	  $(\mathscr{A}\circledast\mathscr{B}) \star_c (\mathscr{C}\circledast\mathscr{D}) =(\mathscr{A}\star_c\mathscr{C})\circledast (\mathscr{B}\star_c\mathscr{D})$
+%				\item
+%				$(\mathscr{A}\circledast\mathscr{B})^{-1} =\mathscr{A}^{-1}\circledast \mathscr{B}^{-1}$ if $\mathscr{A}\in {\mathbb R}^{n\times n \times z}$ and $\mathscr{B}\in {\mathbb R}^{p\times p \times z}$ are nonsingular.
+%			\end{enumerate}
+%		\end{proposition}
+%		\medskip
+%		\noindent
+%		The proofs come directly from the definitions of the $\circledast$ product and the classical relations of the Kronecker product.}
+%	\textcolor{blue}{\medskip
+%		\noindent Let us now introduce  the T-Diamond product between two   tensors and give some of its algebraic properties.
+%		\medskip
+%		\begin{definition}
+%			Let
+%			$\mathscr{A} =[\mathscr{A}_{1},\ldots,\mathscr{A}_{p}]$ where  $ \mathscr{A}_{i}$, $i =1,...,p,$ is an    $n_{1}\times s\times n_{3} $ tensor and let 
+%			$	\mathscr{B} =[\mathscr{B}_{1},\ldots,\mathscr{B}_{l}]$ where $  \mathscr{B}_{j}$, $j =1,...,l,$ is an    $n_{1}\times s\times n_{3} $ tensor. 
+%			Then, the T-diamond  product $\mathscr{A}^{T} \diamondsuit  \mathcal{B} $ is the  tensor of  size  $p \times  \ell \times n_{3}$ given by : 
+%			\begin{align*}
+%			(\mathscr{A}\diamondsuit \mathscr{B})   &=   \text{{\tt ifft}} (\widetilde{(\mathscr{A}\diamondsuit\mathscr{B})},[],3)            \end{align*}
+%			\noindent where the  i-th  frontal  slice  of $  \widetilde{(\mathscr{A}\diamondsuit \mathscr{B})} $ is  given  by 
+%			\begin{align*}
+%			%	(\mathscr{A} \diamondsuit \mathscr{B})   &=     \varphi^{-1}(\varphi(\mathscr{A}) \blacklozenge\varphi(\mathscr{B}) ). \\
+%			%\begin{align*}
+%			\widetilde{(\mathscr{A}\diamondsuit \mathscr{B})}^{(i)}    =      {\mathscr {A}}  ^{(i)T}\diamond  \mathscr{B} ^{(i)},
+%			\end{align*}
+%			and 	   $\diamond $ is the diamond product between two matrices; for more details about the diamond product between two matrices,  see  \cite{bouyouli}. 
+%	\end{definition}}
+%	
+%\medskip
+%\noindent \textcolor{blue}{	The next proposition gives some algebraic properties of the T-diamond product that could be easily proved. \\
+%	\begin{proposition} \label{diamantpropos}		Let $\mathscr{A},\mathscr{B},\mathscr{C}\in {\mathbb R}^{n_{1}\times ps \times n_{3}}$, $\mathscr{D}\in {\mathbb R}^{n_{1}\times n_{1} \times n_{3}}$ and $\mathscr{L}\in {\mathbb R}^{p\times p \times n_{3}}$, We have the following proposals:
+%		\begin{enumerate}
+%			\item $ (\mathscr{A}+\mathscr{B})^{T}\diamondsuit \mathscr{C} = \mathscr{A}^{T}\diamondsuit \mathscr{C} +\mathscr{B}^{T}\diamondsuit \mathscr{C}$
+%			\item
+%			$\mathscr{A}^{T}\diamondsuit(\mathscr{B}+ \mathscr{C}) = \mathscr{A}^{T}\diamondsuit \mathscr{B} +\mathscr{A}^{T}\diamondsuit \mathscr{C}$   			
+%			\item
+%			$(\mathscr{A}^{T}\diamondsuit \mathscr{B})^{T} = \mathscr{B}^{T}\diamondsuit \mathscr{A} $   			
+%			\item
+%			$ (\mathscr{D}\star_c \mathscr{A})^{T}\diamondsuit \mathscr{B} = \mathscr{A}^{T}\diamondsuit (\mathscr{D}^{T}\star_c \mathscr{B})$   			
+%			\item  
+%			$ \mathscr{A}^{T}\diamondsuit (\mathscr{B}\star_c(\mathscr{L}\circledast \mathscr{I}_{ssn_3})) = (\mathscr{A}^{T}\diamondsuit \mathscr{B})\star_c \mathscr{L}$
+%		\end{enumerate}	
+%\end{proposition}}
+%\medskip
+%	
+%	
+%	\textcolor{blue}{\begin{definition} ( Tensor T-trace )
+%			Let $\mathscr{A}$  be a  tensor in  $ \mathbb{R}^{n_{1}\times n_1\times n_{3}}$. The tensor    $\text{T-trace}$ of $\mathscr{A}$ is a fiber-tensor of $\mathbb{R}^{1\times 1\times n_{3}}$ such that  its  $i$-th  frontal slice   is the trace of  the $i$-th frontal slice of $\mathscr {\widetilde A}$, for $i=1,\ldots,n_3$.  
+%		\end{definition}
+%		\medskip
+%\\
+%		\noindent 	The $\text{T-trace}(\mathscr{A})$ can be computed by using the following algorithm 
+%		\begin{algorithm}
+%			\caption{Tensor T-trace}\label{T-0trace31}
+%			\begin{enumerate}
+%				\item 	{\bf Input:} $\mathscr{A}\in {\mathbb R}^{n_{1}\times n_{1} \times n_{3}} $  .
+%				\item \	{\bf Output:} $\text{T-trace}(\mathscr{A})\in {\mathbb R}^{1\times 1 \times n_{3}} $ . 
+%				\item Set $\mathscr{ \widetilde {A}}=\text{{\tt fft}}(\mathscr{ A},[\;],3), $   
+%				\begin{enumerate}
+%					\item for $i=1,\ldots,n_3$
+%					\begin{enumerate}
+%						\item $	z^{(i)} =     trace( {A}^{(i)}). $
+%					\end{enumerate}	
+%					\item End
+%				\end{enumerate}
+%				\item $ (\text{T-trace}(\mathscr{A})) =\text{{\tt ifft}} (z,[\;],3).$
+%				\item End
+%			\end{enumerate}
+%		\end{algorithm}
+%		%	\medskip 
+%		%	\vspace{5.5cm}
+%		\medskip
+%		\noindent\begin{definition}{(Tubal-inner product)}
+%			For  $\mathscr{X},\mathscr{Y}$ two tensors in $\mathbb{R}^{n_{1}\times s\times n_{3}}$, the Tubal-inner  product  $\left\langle {.,.} \right\rangle_T$
+%			is   %of  $\mathbb{R}^{n_{1}\times 1\times n_{3}}$
+%			defined as follows
+%			\begin{align}\label{bilinearform3d}
+%			%\left\langle {\bar{X}, \bar{Y}} \right\rangle:=
+%			\begin{cases}
+%			\mathbb{R}^{n_{1}\times s\times n_{3}}\times \mathbb{R}^{n_{1}\times s\times n_{3}}   & \longrightarrow  \mathbb{R}^{1\times 1\times n_{3}} \\
+%			\qquad  \qquad (\mathscr{X},    \mathscr{Y} ) \qquad   &\longrightarrow  \langle \mathscr{X}, \mathscr{Y} \rangle_T =  \text{T-trace}(\mathscr{X}^{T}\star_c \mathscr{Y}).
+%			\end{cases}.
+%			\end{align}
+%		\end{definition}
+%		Let  $\mathscr{X}_{1},\ldots, \mathscr{X}_{\ell}$ be a collection of $\ell$ third-order  tensors in
+%		$\mathbb{R}^{n_{1}\times s\times n_{3}}$, if
+%		\begin{align*}
+%		%\label{bilinearform3d1}
+%		\left\langle {\mathscr{X}_{i}, \mathscr{X}_{j}} \right\rangle_T =
+%		\begin{cases}
+%		\alpha_{i}{\rm \bf e}&i= j \\
+%		0&i\neq j,
+%		\end{cases}.
+%		\end{align*}
+%		where  $\alpha_{i}$ is a non-zero scalar and ${\rm MatVec}({\rm \bf e})  =(1,0,0\ldots,0)^T$, then the set $\{\mathscr{X}_{1},\ldots, \mathscr{X}_{\ell}\}$  is said to be a T-orthogonal collection of tensors.  This collection  is T-orthonormal if in addition  $\alpha_{i}=1$, $i=1,\ldots,\ell$.
+%	Next, we give some properties od the preceding new tensor products.}
+%	%	\begin{proof}
+%	%{\bf Proof}	Obviously, the  results stems directly from the properties of the matrix-Kronecker.  In fact, 
+%	%%	\begin{enumerate}
+%	%for $i=1,\ldots,n_3$, the i-th  frontal  slice of  $(\widetilde{ \mathscr{A}^{T}\circledast  \mathscr{B}^{T} })$ is  given by: \begin{align*}
+%	%(\widetilde{ \mathscr{A}^{T}\circledast  \mathscr{B}^{T} })^{(i)}&=  \mathscr{A} ^{(i)T} \otimes\mathscr{B} ^{(i)T}\\
+%	%&= (\mathscr{A} ^{(i)} \otimes\mathscr{B} ^{(i)})^T\\
+%	%&=  (\widetilde{(\mathscr{A} \circledast  \mathscr{B} }) ^{T})^{(i)} \end{align*}
+%	%which shows that 	$(\mathscr{A}\circledast\mathscr{B})^{T} =(\mathscr{A}^{T}\circledast  \mathscr{B}^{T})$.  
+%	%   				\item    For $i=1,\ldots,n_3$, we  have  :
+%	%   				\begin{align*}
+%	%   				\varphi((\mathscr{A}\circledast\mathscr{B}) \star_c (\mathscr{C}\circledast\mathscr{D}))_{i}&=((\varphi(\mathscr{A}) \circledcirc\varphi(\mathscr{B}) ) \boxtimes(\varphi(\mathscr{C}) \circledcirc\varphi(\mathscr{D})))_i\\
+%	%   				&=((\varphi(\mathscr{A})  \boxtimes\varphi(\mathscr{C}) ) \circledcirc(\varphi(\mathscr{C}) \boxtimes\varphi(\mathscr{D})))_i\\
+%	%   				&=\varphi((\mathscr{A}\star_c\mathscr{C})\circledast (\mathscr{B}\star_c\mathscr{D}))_i
+%	%   				\end{align*}
+%	%   				Finally  we  get  the  result.\\
+%	%   				\item   For $i=1,\ldots,n_3$, we  have  : \begin{align*}
+%	%   				\varphi{(\mathscr{A}^{-1}\circledast  \mathscr{B}^{-1})}_{i}&= (\varphi(\mathscr{A})^{-1} \circledcirc\varphi(\mathscr{B}) ^{-1} )_i\\
+%	%   				&= ((\varphi(\mathscr{A}) \circledcirc\varphi(\mathscr{B}))^ {-1} )_i\\
+%	%   				&= \varphi({(\mathscr{A} \circledast  \mathscr{B} )}^{-1})_{i}  	\end{align*}
+%	%   				Finally	we get 	$(\mathscr{A} \circledast\mathscr{B})^{-1} =(\mathscr{A}^{-1}\circledast  \mathscr{B}^{-1})$.  
+%	%   			\end{enumerate}
+%	%The two other properties are shown in the same way.\\}
+%	%\end{proof}	
+%	
+%	
+%	
+%	
+%	
+%	
+%	\textcolor{blue}{\begin{proposition}\label{proprinnerprodfrob}
+%			Let $\mathscr{A},\mathscr{B}$ and $\mathscr{C}$ be tensors of $ \mathbb{R}^{n_{1}\times s\times n_{3}}$ and ${\rm \bf a}\in  \mathbb{R}^{1\times 1\times n_{3}}$. Then, the  Tubal-inner product satisfies the following properties
+%			\begin{enumerate}
+%				\item  $\langle \mathscr{A}, \mathscr{B}+\mathscr{C} \rangle_T$=$\langle \mathscr{A}, \mathscr{B}\rangle_T+\langle \mathscr{A},\mathscr{C} \rangle_T$.
+%				\item $\langle \mathscr{A}, {\rm \bf a}\divideontimes\mathscr{B}  \rangle_T$=${\rm \bf a}\star_c \langle \mathscr{A}, \mathscr{B}\rangle_T $.
+%				\item  
+%				$\langle \mathscr{A}, \mathscr{X}\star_c \mathscr{B}  \rangle_T=\langle \mathscr{X}^T\star_c\mathscr{A},   \mathscr{B}  \rangle_T,$ for $\mathscr{X} \in  \mathbb{R}^{n_{1}\times n_1\times n_{3}}.$
+%			\end{enumerate}
+%			\medskip
+%	\end{proposition}}
+%	
+%	%\begin{proof}
+%	%   			\begin{enumerate}
+%	%   				\item
+%	\textcolor{blue}{{\bf Proof.} 			  For $i=1,\ldots,n_3$, we  have   \begin{align*}
+%		( \text{T-trace} {\widetilde{  (\mathscr{A}^{T}\star_c (\mathscr{B}+\mathscr{C}))} } ^{(i)}&=  \text{trace} \left(  \mathscr{A} ^{(i)T}  ( \mathscr{B} ^{(i)}+ \mathscr{C}   ^{(i)})\right),\\
+%		&= \text{trace} \left(  \mathscr{A} ^{(i)T}   \mathscr{B} ^{(i)}+  \mathscr{A} ^{(i)T} \mathscr{C}   ^{(i)}\right),\\
+%		&= (\text{T-trace} (\widetilde{ \mathscr{A}^{T}\star_c \mathscr{B}+ \mathscr{A}^{T}\star_c \mathscr{C}})) ^{(i)}.		\end{align*}
+%		which shows the first property. 	The other properties could be easily shown in the same way.}
+%	
+%	
+%
+%	%	\begin{proof}
+%	%{\bf Proof.} 	Obviously, the  results are derived  directly from the properties of the matrix-$\diamond$ product. 
+%	%%	\begin{enumerate}
+%	%For $i=1,\ldots,n_3$ we have
+%	%\begin{align*}
+%	% 	\left( \widetilde{ \mathscr{A}^{T}\diamondsuit (\mathscr{B}\star_c(\mathscr{L} \circledast \mathscr{I}_{ssn_3}))} \right)^{(i)}& =     {\mathscr {A}}  ^{(i)T} \diamond \left(   {\mathscr {B}}  ^{(i)}  (   {\mathscr {L}}  ^{(i)}\otimes    {\mathscr {I}_{ssn_3}}  ^{(i)})\right) \\
+%	%&=   \left( {\mathscr {A}}  ^{(i)T} \diamond {\mathscr {B}}   ^{(i)}\right)  {\mathscr {L}}  ^{(i)}  \\
+%	%&= \left( ( \widetilde{\mathscr{A}^{T}\diamondsuit 
+%	%\mathscr{B})\star_c\mathscr{L}} \right)^{(i)}.
+%	% 	\end{align*}
+%	%\noindent Finally we  get :  $ \mathscr{A}^{T}\diamondsuit (\mathscr{B}\star_c(\mathscr{L}\circledast \mathscr{I}_{ssn_3})) = (\mathscr{A}^{T}\diamondsuit \mathscr{B})\star_c \mathscr{L}$.  The other results are obtained by following in  the same manner.}
+%	
+%	
+%	
+%	\subsection{The tensor  tubal-global Arnoldi process}  
+%	
+%	\textcolor{blue}{
+%		\noindent First, we need to introduce a normalization  algorithm. This means that   given a non-zero $\mathscr{A}\in {\mathbb R}^{n_{1}\times s \times n_{3}}$, we need to be able to write : $$ \mathscr{A}={\rm \bf a}\divideontimes\mathscr{Q}= \mathscr{Q}\star_c({\rm \bf a} \circledast\mathscr{I}_{ssn_3})$$  where ${\rm \bf a}\in {\mathbb R}^{1\times 1 \times n_{3}}$ is invertible and  $\left\langle \mathscr{Q},\mathscr{Q}\right\rangle_T={\rm \bf e}$, where ${\rm \bf e}$ is the tubal-fiber such that ${\rm MatVec}({\rm \bf e})  =(1,0,0\ldots,0)^T$. 
+%		\noindent We consider the following normalization algorithm. 
+%		\begin{algorithm}[!h]
+%			\caption{A normalization algorithm (Normalization($\mathscr{A}$))}\label{normalization12}
+%			\begin{enumerate}
+%				\item 	{\bf Input.} $\mathscr{A}\in {\mathbb R}^{n_{1}\times s \times n_{3}} $ and  tolerance $tol$.
+%				%	\item \textcolor{blue}{	{\bf Output.} $\mathscr{Q}\in {\mathbb R}^{n_{1}\times s \times n_{3}} $ }
+%				\item Set $\mathscr{\widetilde{Q}}=\text{{\tt fft}}(\mathscr{A},[\;],3) $   	\begin{enumerate}
+%					\item for $j=1,\ldots,n_3$		
+%					\begin{enumerate}
+%						\item  $a_j= 	|| {Q}^{(j)}||_F  $ 
+%						\item if 	$a^{(j)}<tol$, stop 
+%						\item else   $\mathscr{ {Q}}^{(j)}=\displaystyle \frac{\mathscr{ {Q}}^{(j)} }{a^{(j)}} $	
+%					\end{enumerate}	
+%					\item End for
+%				\end{enumerate}
+%				\item $ \mathscr{Q}  =\text{{\tt ifft}}  (\mathscr{\widetilde{Q}} ,[\;],3)$, $ {\rm \bf a}  =\text{{\tt ifft}}({\rm \bf a} ,[\;],3)$
+%				\item End
+%			\end{enumerate}
+%		\end{algorithm}
+%		\medskip
+%		\\
+%		Notice that $a_i$ is a scalar (  the i-th frontal slice of the tube scalar ${\rm \bf a}\in {\mathbb R}^{1\times 1 \times n_{3}}$) and $\mathscr{ {Q}}^{(i)}$ is the i-th frontal slice of $\mathscr{\widetilde{Q}}\in {\mathbb R}^{n_1\times s \times n_{3}}.$}
+%%		\textcolor{blue}{The  tensor tubal global Krylov  subspace    generated by the pair  ($\mathscr{A},\mathscr{V}$) and denoted by $\mathscr{TK}^{g}_{m}(\mathscr{A},\mathscr{V})\subset   \mathbb{R}^{n\times s \times n_3}$  is defined by :
+%%		\begin{align}\label{ttgk}
+%%		\mathscr{TK}^{g}_{m}(\mathscr{A},\mathscr{V})&=\text{Tubal-Span}\left\lbrace \mathscr{V},\mathscr{A}\star_c\mathscr{V},\mathscr{A}^2\star_c\mathscr{V},\ldots,\mathscr{A}^{m-1}\star_c\mathscr{V}\right\rbrace \\
+%%		&=\left\lbrace \mathscr{Z} \in \mathbb{R}^{n\times s \times n_3}, \mathscr{Z}= \sum_{i=1}^m {\rm \bf a}_{i}\divideontimes(
+%%		\mathscr{A}^{i-1}\star_c\mathscr{V}) \right\rbrace 
+%%		\end{align}
+%%		where ${\rm \bf a}_{i}\in \mathbb{R}^{1\times 1 \times n_3}$,  $\mathscr{A}^{i-1}\star_c\mathscr{V}=\mathscr{A}^{i-2}\star_c\mathscr{A}\star_c\mathscr{V}$, $i=2,\ldots,m$ and $\mathscr{A}^{0}$ is the identity tensor . 
+%	\textcolor{blue}{		The following Tubal-Global Arnoldi process  produces a T-orthogonormal basis of  $\mathscr{TK}^{g}_m(\mathscr{A},\mathscr{V})$ . The algorithm is described as follows 
+%\begin{algorithm}[h]
+%			\caption{The Tensor Tubal-Global Arnoldi} \label{TTGA}
+%			\begin{enumerate}
+%				\item 	{\bf Input.} $\mathscr{A}\in \mathbb{R}^{n\times n \times n_3}$, $\mathscr{V}\in \mathbb{R}^{n\times s \times n_3}$ and and the positive integer m.
+%				\item Set $[\mathscr{V}_{1},r_{1,1,:}]=  Normalization(\mathscr{V}).$
+%				\item For $j=1,\ldots,m$
+%				\begin{enumerate}
+%					\item $\mathscr{W}=  \mathscr{A}\star_c   \mathscr{V}_j,$
+%					\item for $i=1,\ldots,j$
+%					\begin{enumerate}
+%						\item $h_{i,j,:}=\langle \mathscr{V}_i, \mathscr{W} \rangle_T,$
+%						\item $\mathscr{W}=\mathscr{W}-h_{i,j,:}\divideontimes\mathscr{V}_i.$	
+%					\end{enumerate}	
+%					\item End for
+%					\item $[\mathscr{V}_{j+1},h_{j+1,j,:}]=  Normalization(\mathscr{W} ).$
+%				\end{enumerate}
+%				\item End
+%			\end{enumerate}
+%	\end{algorithm}}
+%	\textcolor{blue}{\begin{proposition}
+%			Suppose that m steps of Algorithm \ref{TTGA} have been run. Then, the tensors  $\mathscr{V}_{1},\ldots,\mathscr{V}_{m}$, form a T-orthonormal basis of the Tubal-global Krylov  subspace $\mathscr{TK}^{g}_{m}(\mathscr{A},\mathscr{V})$.
+%	\end{proposition}}
+%	\medskip
+%	
+%	%   	\begin{proof}
+%	\textcolor{blue}{{\bf Proof.} The proofs can be obtained by induction on $m$ using the different steps of Algorithm \ref{normalization12} and Algorithm \ref{TTGA} .}
+%	%This will be shown by induction on $m$.  For $m=1$, we have from Line 2  of  Algorithm 5 the relation  $ \langle \mathscr{V}_1, \mathscr{V}_1\rangle_T ={\rm \bf e}$.  Assume now that the result is true for some $m$, then from Algorithm \ref{TGQR} and by using the results of  Proposition \ref{proprinnerprodfrob},  we get
+%	%\begin{align*}
+%	%(h_{m+1,m,:}) \star_c\langle \mathscr{V}_{j},\mathscr{V}_{m+1}\rangle_T&= \langle \mathscr{V}_{j},(h_{m+1,m,:})\divideontimes\mathscr{V}_{m+1}\rangle_T\\
+%	%&=  \langle \mathscr{V}_{j},  (\mathscr{W} - \sum_{i =1}^{m}h_{i,m,:} \divideontimes\mathscr{V}_{i})\rangle_T     \\
+%	%&=   \left(  \langle  \mathscr{V}_{j},\mathscr{W} \rangle_T    -(\sum_{i =1}^{m }h_{i,m,:}\star_c\langle \mathscr{V}_{j},\mathscr{V}_{i} \rangle_T) \right)    \\
+%	%&=   (h_{j,m,:}-h_{j,m,:})    =0,\, =1,\ldots,m.
+%	%\end{align*}
+%	%Furthermore, from Line 3(d) of Algorithm \ref{TTGA}, we immediately have $\langle \mathscr{V}_{m+1},\mathscr{V}_{m+1}\rangle={\rm \bf e}$. Therefore, the
+%	%result is true for $m+1$ which completes the proof.}%  and finally we get $\mathbb{V}_m^T\diamondsuit \mathbb{V}_m=\mathscr{I}_{ m m n_{3}}$. 
+%	%   	\end{proof}
+%	
+%	\medskip
+%	%   \noindent 	Let $\mathbb{V}_{m}  $ be  the   $(n_{1}\times sm \times n_{3})$ tensor whose  frontal slices are $\mathscr{V}_{1},\ldots,\mathscr{V}_{m}$ and let    $\mathscr{\widetilde{H}}_{m}$ the $(m+1)\times m \times n_{3} $ Hessenberg tensor ( the tensor whose all frontal slices are Hessenberg matrices) defined by (TTGA)   and  let  $\mathscr{H}_{m}$  be the tensor obtained from $\widetilde{\mathscr{ H}}_{m}$ by deleting its last horizontal slice.   $\mathscr{A}\star_c\mathbb{V}_{m}  $ is  the $(n_{1}\times (sm)\times n_{3})$ tensor whose  frontal slices are  $\mathscr{A}\star_c\mathscr{V}_{1},\ldots,\mathscr{A}\star_c\mathscr{V}_{m}$, respectively. We can set 
+%	%\textcolor{blue}{Let  	$$\mathbb{V}_{m}:=\left[  \mathscr{V}_{1},\ldots,\mathscr{V}_{m}\right] \; {\rm and }\;
+%	%\mathscr{A}\star_c\mathbb{V}_{m}:=[\mathscr{A}\star_c\mathscr{V}_{1},\ldots,\mathscr{A}\star_c\mathscr{V}_{m}]$$}
+%	
+%	\noindent We can now state the following algebraic properties that are similar to those corresponding to the matrix case and associated with the new tensor products that we defined earlier. Here also the proofs are not difficult to obtain.
+%	\textcolor{blue}{\begin{proposition}\label{T-GlobalArnolproposit0}
+%			Suppose that m steps of Algorithm \ref{TTGA} have been run. Then, the following statements hold:
+%			\begin{align*}
+%			\mathscr{A}\star_c\mathbb{V}_{m}=&\mathbb{V}_{m}\star_c (\mathscr{H}_{m} \circledast \mathscr{I}_{ssn_3}) + \mathscr{V}_{m+1}\star_c(h_{m+1,m,:}\star_c (e_{1,m,:}\circledast   \mathscr{I}_{ssn_3}))),\\
+%			\mathbb{V}_{m}^{T}\diamondsuit\mathcal{A}\star_c\mathbb{V}_{m}=&\mathscr{H}_{m}, \\
+%			\mathcal{A}\star_c\mathbb{V}_{m}=&\mathbb{V}_{m+1} \star_c(\mathscr{ \widetilde{H}}_m\circledast \mathscr{I}_{ssn_3}), \\
+%			\mathbb{V}_{m+1}^{T}\diamondsuit  \mathcal{A}\star_c\mathbb{V}_{m}=&\mathscr{ \widetilde{H}}_m,\\
+%			\mathbb{V}_{m}^{T} \diamondsuit\mathbb{V}_m=&\mathscr{I}_{ m m n_{3}},
+%			\end{align*}
+%			where $e_{1,m,:} \in \mathbb{R}^{1\times m\times n_{3}}$ with 1 in  the $(1,m,1)$ position and zeros in the other positions  and  $h_{m+1,m,:}$ is the fibre tube  of $\mathscr{ \widetilde{H}}_m$.\\
+%	\end{proposition}}
+%	
+%	\medskip
+%	%%   	\begin{proof}
+%	%\textcolor{blue}{{\bf Proof.} 
+%	%We give a proof only for the third relation, the other relations could be obtained in the same way. From Algorithm \ref{TTGA}, we have $ \mathscr{A}\star_c\mathscr{V}_{j}=\displaystyle \sum_{i =1}^{j+1}h_{i,j,:}\divideontimes \mathscr{V}_{i}$. 
+%	%Using the fact that  $\mathscr{A}\star_c\mathbb{V}_{m}=[\mathscr{A}\star_c\mathscr{V}_{1},\ldots,\mathscr{A}\star_c\mathscr{V}_{m}]$,
+%	%the j-th frontal slice      of $\mathscr{A}\star_c\mathbb{V}_{m}$ is given by : 
+%	%\begin{align*}
+%	%(\mathscr{A}\star_c\mathbb{V}_{m})_j=\mathscr{A}\star_c\mathscr{V}_{j}&=\sum_{i =1}^{j+1}h_{i,j,:}\divideontimes \mathscr{V}_{i}	 \\
+%	%&=\sum_{i =1}^{j+1}  \mathscr{V}_{i}\star_c((h_{i,j,:} )\circledast \mathscr{I}_{s,s,n_3})\\
+%	%%&=[ \mathscr{V}_{1},\ldots, \mathscr{V}_{j+1}]\star_c\left(  \left[ {\begin{array}{ {c}}
+%	%%	{ {h}_{1,j,:}}  \\
+%	%%	\vdots \\
+%	%%	{ {h}_{j+1,j,:}}
+%	%%	\end{array}} \right]\circledast \mathscr{I}_{s,s,n_3}\right). 
+%	%\end{align*}
+%	%Let  ${\mathscr{H}_j}= \left[ {\begin{array}{ {c}}
+%	%	{ {h}_{1,j,:}}  \\
+%	%	\vdots \\
+%	%	{ {h}_{j+1,j,:}}\\
+%	%	0\\
+%	%	\vdots\\
+%	%	0
+%	%	\end{array}}\right] \in {\mathbb R}^{m+1\times 1 \times n_{3}}  $ be  the j-th lateral slice of  of the Hessemberg tensor  $\mathscr{ \widetilde{H}} =[\mathscr{H}_1 ,\ldots, \mathscr{H}_{m}]$.
+%	%Then we have  $$(\mathscr{A}\star_c\mathbb{V}_{m})_j=[ \mathscr{V}_{1},\ldots, \mathscr{V}_{j+1}]\star_c\left(\mathscr{H}_{j}   \circledast \mathscr{I}_{s,s,n_3}\right) \quad j=1,\ldots,m. 
+%	%$$
+%	%and the result follows. }
+%	% 	\end{proof} 
+%	
+%	
+%	\subsection{The tensor  Tubal-Global GMRES  method}
+%	
+%	\textcolor{blue}{The tubal-global GMRES method is  based on tubal-global Arnoldi process to build an orthonormal basis of the tensor   tubal Krylov subspace \eqref{ttgk0}.   
+%		\begin{proposition}\label{propoortho}
+%			Let $ \mathscr{  {Y}}\in \mathbb{R}^{m\times 1\times n_{3}}$ and $\mathscr{V} \in \mathbb{R}^{n\times ms\times n_{3}}$  such that  $\mathscr{V} ^{T} \diamondsuit \mathscr{V} =\mathscr{I}_{ m m n_{3}}$. Then
+%			\begin{align*}
+%			||\mathscr{  {V}}\star_c(\mathscr{  {Y}}\circledast \mathscr{I}_{ssn_3})||_F=||\mathscr{  {Y}}||_{F}.
+%			\end{align*}
+%	\end{proposition}}
+%	
+%	%\begin{proof}
+%	\textcolor{blue}{{\bf Proof.}  We have : \begin{align*}
+%		||\mathscr{  {V}}\star_c(\mathscr{  {Y}}\circledast \mathscr{I}_{ssn_3})||_F^2&=\frac{1}{ {n_3}}(\sum_{i=1}^{n_3}|| \mathscr{  {V}} ^{(i)}  \left(   \mathscr{  {Y}}  ^{(i)} \otimes   \mathscr  {I}_{ssn_3}  ^{(i)}\right)  ||^2_F), \\
+%		&=\frac{1}{ {n_3}}(\sum_{i=1}^{n_3}(||  \mathscr{  {Y}} \ ^{(i)} ||_2^2)), \\
+%		&=||\mathscr{  {Y}}||_{F}^2.
+%		\end{align*}}
+%	%	\end{proof}
+%	
+%	\medskip
+%	\noindent \textcolor{blue}{  Consider now  the linear system   of tensor equations
+%		\begin{equation}\label{syslintens0}
+%		\mathscr{A}\star_c \mathscr{X}=\mathscr{B}
+%		\end{equation}  
+%		where $\mathscr{A}\in \mathbb{R}^{n\times n \times n_3}$ assumed to be nonsingular, $\mathscr{B}$, $\mathscr{X} \in \mathbb{R}^{n\times s \times n_3}$ with  $ s \ll n$. If $n_3=1$ then the problem  \eqref{syslintens0}  reduces to a  multiple linear systems of $s$ equations . 
+%		Let $\mathscr{  {X}}_{0}\in \mathbb{R}^{n\times s\times n_{3}}$ be an arbitrary initial guess   with  the associated  residual tensor 
+%		$\mathscr{R}_{0}=\mathscr{B}-\mathscr{A}\star_c \mathscr{X}_0$.    The aim of the tensor  Tubal-Global GMRES method is to find, at some step $m$,   an approximation $\mathscr{X}_{m}$ of the solution $\mathscr{X}^*$ of  the problem \eqref{syslintens0} as follows \begin{align}\label{GLgmrescondition0}
+%		\mathscr{X}_{m}-\mathscr{X}_{0}\in \mathscr{TK}^{g}_{m}(\mathscr{A},\mathscr{R}_0), 
+%		\end{align}
+%		with  \begin{align}\label{GLgmresconditionminim} 
+%		||\mathscr{R}_m ||_{F}=\displaystyle \min_{\mathscr{X}-\mathscr{X}_{0}\in \mathscr{TK}^{g}_{m}(\mathscr{A},\mathscr{R}_0)}  ||\mathscr{B}-\mathscr{A}\star_c \mathscr{X}||_F
+%		.  \end{align}}
+%	
+%	\noindent \textcolor{blue}{	Let   $\mathscr{X}_{m}=\mathscr{X}_{0}+ \mathbb{V}_{m}\star_c(\mathscr{  {Y}_{m}}\circledast \mathscr{I}_{ssn_3} )$ with $ \mathscr{  {Y}}\in \mathbb{R}^{m\times 1\times n_{3}}$. Then the problem \eqref{GLgmresconditionminim} is equivalent to 
+%		\begin{align}\label{lowy}
+%		||\mathscr{R}_m ||_{F}&=  \displaystyle \min_{ \mathscr{  {Y}}\in \mathbb{R}^{m\times 1\times n_{3}}}
+%		||\mathscr{R}_{0}-\mathscr{A}\star_c\mathbb{V}_{m}\star_c( \mathscr{Y}\circledast \mathscr{I}_{ssn_3} )||_F.
+%		%&=\mathbb{V}_{m+1} \star_c(\mathscr{ \widetilde{H}}_m\circledast \mathscr{I}_{s,s,n_3})
+%		\end{align}  
+%		Using Proposition \ref{propoortho}, Proposition \ref{kronprop1} and Step 2 of  Algorithm \ref{TTGA}, we get the following relations
+%		\begin{align*}
+%		||\mathscr{R}_{0}-\mathscr{A}\star_c\mathbb{V}_{m}\star_c( \mathscr{Y}\circledast \mathscr{I}_{ssn_3} )||_F&=|| r_{1,1,:} \divideontimes\mathscr{V}_{1}   -(\mathbb{V}_{m+1} \star_c(\mathscr{ \widetilde{H}}_m\circledast \mathscr{I}_{ssn_3}))\star_c( \mathscr{Y}\circledast \mathscr{I}_{ssn_3} ))||_F\\
+%		&=||\mathscr{V}_{1}\star_c(r_{1,1,:}\circledast \mathscr{I}_{ssn_3})-(\mathbb{V}_{m+1} \star_c(\mathscr{ \widetilde{H}}_m\circledast \mathscr{I}_{ssn_3}))\star_c( \mathscr{Y}\circledast \mathscr{I}_{ssn_3} ))||_F\\
+%		&=||\mathbb{V}_{m+1}\star_c  (e_{1,1,:}\circledast \mathscr{I}_{ssn_3})\star_c(r_{1,1,:}\circledast \mathscr{I}_{ssn_3})-(\mathbb{V}_{m+1} \star_c ((\mathscr{ \widetilde{H}}_m\star_c\mathscr{Y})\circledast \mathscr{I}_{ssn_3} ))||_F\\
+%		&=||\mathbb{V}_{m+1}\star_c((e_{1,1,:}\star_c r_{1,1,:} )\circledast \mathscr{I}_{s,s,n_3})   -( (\mathscr{ \widetilde{H}}_m\star_c\mathscr{Y})  \circledast \mathscr{I}_{ssn_3} ))||_F\\
+%		&=||\mathbb{V}_{m+1}\star_c( e_{1,1,:}\star_c r_{1,1,:} -( \mathscr{ \widetilde{H}}_m\star_c\mathscr{Y}))  \circledast \mathscr{I}_{ssn_3} )||_F\\
+%		&=|| ( e_{1,1,:}\star_c r_{1,1,:}  -( \mathscr{ \widetilde{H}}_m\star_c\mathscr{Y}))   ||_{F},
+%		\end{align*}
+%		where $e_{1,1,:}\in \mathbb{R}^{m+1\times 1\times n_{3}}$ with 1 in the  $(1,1,1)$ position and zero in the other positions.
+%		Therefore, the tensor $	\mathscr{Y}_m$ solving the minimisation problem \eqref{lowy} is given by 
+%		\begin{equation}\label{Gmressol1}
+%		\mathscr{Y}_m=  \arg \displaystyle  \min_{ \mathscr{  {Y}}\in \mathbb{R}^{m\times 1\times n_{3}}}|| ( e_{1,1,:}\star_c r_{1,1,:} -( \mathscr{ \widetilde{H}}_m\star_c\mathscr{Y}))   ||_{F}, 
+%		\end{equation}
+%		and the $m$-th  approximate solution is given as 
+%		\begin{equation}\label{solutdegmresxm1}
+%		\mathscr{X}_{m}=\mathscr{X}_{0}+ \mathbb{V}_{m}\star_c(\mathscr{  {Y}}_{m}\circledast \mathscr{I}_{ssn_3} ). 
+%		\end{equation}
+%	\medskip
+%	The projected low dimensional tensor problem \eqref{Gmressol1} can be easily solved by using  the tensor QR factorisation of the tensor $\mathscr{\widetilde {H}}_m$. }
+%	% \noindent For  solving  the reduced tensor minimisation problem \eqref{Gmressol1},  we  use the   following algorithm 
+%	% \begin{algorithm}[!h]
+%	% 	\caption{  Solution   of  Equation \eqref{Gmressol1} }\label{lestsquaresol}
+%	% 	\begin{enumerate}
+%	% 		\item 	{\bf Input:} $\mathscr{A}\in {\mathbb R}^{n_{1}\times n_{2} \times n_{3}} $  .
+%	% 		$\mathscr{B}\in {\mathbb R}^{n_{1}\times 1 \times n_{3}} $
+%	% 		\item \	{\bf Output:} $  \mathscr{Y}_m=  \arg \displaystyle  \min_{ \mathscr{  {Y}}\in \mathbb{R}^{m\times 1\times n_{3}}}|| (  \mathscr{B} -( \mathscr{ {A}} \star_c\mathscr{Y}))   ||_{F}$.. 
+%	% 		\item Set $\widetilde{\mathscr{ A }}=\text{{\tt fft}}(\mathscr{ A},[],3) $ ,  $\widetilde{\mathscr{ { B}}}=\text{{\tt fft}}(\mathscr{ B},[],3) $   
+%	% 		\begin{enumerate}
+%	% 			\item for $i=1,\ldots,n_3$
+%	% 			\begin{enumerate}
+%	% 				\item $	z^{(i)} =      {A}^{(i)}  \backslash {B}^{(i)} $ \quad ($\backslash$ MATLAB backslash operator )
+%	% 			\end{enumerate}	
+%	% 			\item End
+%	% 		\end{enumerate}
+%	% 		\item $  \mathscr{Y}_m =\text{{\tt ifft}} (z,[],3)$
+%	% 		\item End
+%	% 	\end{enumerate}
+%	% \end{algorithm}} 
+	
+	
+	\section{Application to discrete-ill posed tensor problems}
+ Here, we apply the following Tikhonov regularization approach and solve the new problem
+	
+	\begin{equation}\label{tikho3}
+	\underset{\mathscr{X}}{\text{min}}\{\|\mathscr{A} \star_c \mathscr{X} - \mathscr{C}  \|_F^2+\mu^{-1} \|\mathscr{X}\|_F^2\}.
+	\end{equation}
+	The  use of  $\mu^{-1} $
+	in (\ref{tikho3}) instead of $\mu$  will be justified below. In the what follows, we briefly review the discrepancy principle approach to determine a suitable regularization parameter, given an approximation of the norm of the additive error. We then assume that a bound $\varepsilon$ for $\|\mathscr{N}\|_F$ is available. This priori information suggests that $\mu$ has to be determined  as soon as
+	\begin{equation}\label{discrepancy}
+	\phi(\mu)\leq\eta\epsilon,
+	\end{equation}
+	where $\phi(\mu)=\|\mathscr{A} \star_c \mathscr{X} - \mathscr{C}  \|_F^2$ and  $ \eta\gtrapprox 1$ is refereed to  as the safety factor for the discrepancy principle. A zero-finding method can be used to solve (\ref{discrepancy}) in order to find a suitable regularization parameter which also implies that $\phi(\mu)$ has to be evaluated for several $\mu$-values. When the tensor  $\mathscr{A}$ is of moderate size, the quantity $\phi(\mu)$ can be easily evaluated. This evaluation becomes expensive when the matrix $\mathscr{A}$ is large, which means that its evaluation by a  zero-finding method can be very difficult and computationally expensive.  We will approximate $\phi$ to be able to determine an estimate of  $\|\mathscr{A} \star_c \mathscr{X} - \mathscr{C}  \|_F^2$.  Our approximation is obtained by using  T-global Golub-Kahan bidiagonalization (T-GGKB) and  Gauss-type quadrature rules. This connection provides approximations of moderate sizes to the quantity  $\phi$, and therefore gives a solution method to inexpensively solve (\ref{discrepancy}) by evaluating these small quantities that can successfully and inexpensively be employed to compute $\mu$ as well as defining a stopping criterion for  the T-GGKB iterations;  see \cite{belguide, belguide2} for discussion on this method.\\
+	Introduce the functions (of $\mu$)
+	\begin{eqnarray}\label{Gkfmu}
+	\mathcal{G}_m f_\mu&=&\|\mathscr{C}\|_F^2 e_1^T(\mu C_m C_m^T+I_m)^{-2}e_1,\\
+	{\mathcal R}_{m+1}f_\mu&=&\|\mathcal{C}\|_F^2 e_1^T(\mu \widetilde{C}_m\widetilde{C}_m^T+I_{m+1})^{-2}e_1;
+	\end{eqnarray}
+	The quantities   $\mathcal{G}_m f$ and ${\mathcal R}_{m+1}f_\mu$ are refereed to as   Gauss and Gauss-Radau quadrature rules, respectively, and can be obtained after $m$ steps of T-GGKB (Algorithm \ref{TG-GK}) applied to tensor $\mathscr{A}$ with initial tensor $\mathscr{C}$. These quantities  approximate $\phi(\mu)$ as follows
+	\begin{equation}
+	\mathcal{G}_m f_\mu\leq\phi(\mu)\leq{\mathcal R}_{m+1}f_\mu.
+	\end{equation}
+	Similarly to the approaches proposed  in \cite{belguide, belguide2}, we therefore instead  solve for $\mu$ the low dimensional nonlinear equation
+	\begin{equation}\label{lin22}
+	{\mathcal G}_m f_\mu=\epsilon^2.
+	\end{equation}
+	We apply the Newton's method to solve (\ref{lin22}) that requires repeated evaluation of the function ${\mathcal G}_m f_\mu$ and its derivative, which are inexpensive computations for small $m$.\\
+	We now comment on the use of  $\mu$ in (\ref{tikho3}) instead of $1 / \mu,$ implies that the left-hand side of (\ref{discrepancy}) is a decreasing convex function of $\mu .$ Therefore, there is a unique solution, denoted by $\mu_{\varepsilon},$ of
+	$$
+	\phi(\mu)=\varepsilon^{2}
+	$$
+	for almost all values of $\varepsilon>0$ of practical interest and therefore also of (\ref{lin22}) for $m$ sufficiently large; see \cite{belguide, belguide2} for analyses.  We accept $\mu_m$ that solve (\ref{discrepancy}) as an approximation of $\mu$, whenever we have
+	\begin{equation}\label{upperbd}
+	{\mathcal R}_{m+1}f_{\mu}\leq\eta^2\epsilon^2. 
+	\end{equation}
+	If (\ref{upperbd}) does not hold for $\mu_m$, we carry out one more GGKB steps, replacing $m$ by $m+1$ and solve the nonlinear equation
+	\begin{equation}\label{}
+	{\mathcal G}_{m+1}f_\mu=\epsilon^2;
+	\end{equation}
+	see \cite{belguide, belguide2} for more details. Assume now that (\ref{upperbd}) holds for some $\mu_m$. The corresponding regularized solution is then computed by
+	\begin{equation}\label{Xkmu}
+	\mathscr {X}_{m,\mu_m}=\mathbb{U}_m \circledast y_{m,\mu_m}
+	\end{equation}
+	where $y_{m,\mu_m}$ solves 
+	\begin{equation}\label{normeq2}
+	(\widetilde{C}_m^T\widetilde{C}_m+\mu_m^{-1} I_m)y=\alpha_1\widetilde{C}_m^Te_1,\qquad\alpha_1=\|\mathscr{C}\|_F.
+	\end{equation}
+	It is also computed by solving the least-squares problem
+	\begin{equation}\label{leastsq}
+	\min_{y\in\mathbb{R}^m} \begin{Vmatrix}
+	\begin{bmatrix}
+	\mu_m^{1/2}\widetilde{C}_m\\
+	I_m
+	\end{bmatrix}
+	y-\alpha_1\mu_m^{1/2}e_1 \end{Vmatrix}_2.
+	\end{equation}The following result shows an important property of the approximate solution (\ref{Xkmu}). We include a proof for completeness.
+	
+	
+	\begin{proposition}
+		Let $\mu_{m}$ solve (\ref{lin22}) and let $y_{m,\mu_m}$ solve (\ref{leastsq}). Then the associated approximate solution (\ref{Xkmu}) of (\ref{tikho3}) satisfies
+		%	$$
+		%	\left\|\mathscr{A}\star_c \mathscr{X}_{m,\mu_m}-\mathscr{C}\right\|_{F}^{2}=R_{m+1} f_{\mu_{m}}.
+		%	$$
+		$$
+		\left\|\mathscr{A}\star_c \mathscr{X}_{m,\mu_m}-\mathscr{C}\right\|_{F}^{2}=R_{m+1} f_{\mu_{m}}.
+		$$
+		
+	\end{proposition}
+	\begin{proof} From the  items  of Proposition \ref{proptggkb}, we get the following matrix low dimensional least  squares problem 
+		%$$
+		%\mathscr{A}\ast \mathscr{X}_{m,\mu_m}=(\mathscr{A}\ast \mathbb{V}_{m})\circledast y_{m,\mu_m}= \mathbb{U}_{m+1}\circledast(\widetilde{C}_m y_{m,\mu_m}) 
+		%$$
+		%$$(\mathscr{A}\star_c \mathscr{X}_{m,\mu_m})=(\mathscr{A}\star_c \mathbb{U}_{m})\circledast y_{m,\mu_m}
+		%	=\mathbb{V}_{m+1}\circledast(\widetilde{C}_m y_{m,\mu_m})
+		%$$
+	%	Using the above expression gives
+		%	$$
+		%	\begin{aligned}
+		%	\left\|\mathscr{A}\ast \mathscr{X}_{m,\mu_m}-\mathscr{C}\right\|_{F}^{2}&=\left\|\mathbb{U}_{m+1}\circledast(\widetilde{C}_m y_{m,\mu_m})-\alpha_1\mathscr{U}_1\right\|_{F}^{2},  \\
+		%	&=\left\|\mathbb{U}_{m+1}\circledast(\widetilde{C}_m y_{m,\mu_m})-\mathbb{U}_{m+1}\circledast(\alpha_1e_1)\right\|_{F}^{2}, \\
+		%&=\left\|\mathbb{U}_{m+1}\circledast\left(\widetilde{C}_m y_{m,\mu_m}-\alpha_1e_1\right)\right\|_{F}^{2}, \\
+		%&=\left\|\widetilde{C}_\ell y_{m,\mu_m}-\alpha_1e_1\right\|_{2}^{2}.
+		%\end{aligned}$$
+		$$
+		%\begin{aligned}
+		\left\|\mathscr{A}\star_c \mathscr{X}_{m,\mu_m}-\mathscr{C}\right\|_{F}^{2}=\left\|\widetilde{C}_\ell y_{m,\mu_m}-\alpha_1e_1\right\|_{2}^{2}.$$		
+%		&=\left\|\mathbb{V}_{m+1}\circledast(\widetilde{C}_m y_{m,\mu_m})-\alpha_1\mathscr{U}_1\right\|_{F}^{2},  \\
+%		&=\left\|\mathbb{V}_{m+1}\circledast(\widetilde{C}_m y_{m,\mu_m})-\mathbb{V}_{m+1}\circledast(\alpha_1e_1)\right\|_{F}^{2}, \\
+%		&=\left\|\mathbb{V}_{m+1}\circledast\left(\widetilde{C}_m y_{m,\mu_m}-\alpha_1e_1\right)\right\|_{F}^{2}, \\
+%		&=\left\|\widetilde{C}_\ell y_{m,\mu_m}-\alpha_1e_1\right\|_{2}^{2}.
+%		\end{aligned}$$
+		where  $\alpha_{1}=\|\mathcal{C}\|_{F}$. We now express $y_{m,\mu_m}$ with the aid of  (\ref{normeq2}) and by using the following  matrix identity 
+		$$I-A\left(A^{T} A+\mu^{-1} I\right)^{-1} A^{T}=\left(\mu A A^{T}+I\right)^{-1}$$
+		with $A$ replaced by $\widetilde{C}_{m},$ to obtain
+		$$
+		\begin{aligned}
+		\left\|\mathscr{A}\star_c \mathscr{X}_{m,\mu_m}-\mathscr{C}\right\|_{F}^{2} &=\alpha_{1}^{2}\left\|e_{1}-\widetilde{C}_{m}\left(\widetilde{C}_{m}^{T} \widetilde{C}_{m}+\mu_{m}^{-1} I_{m}\right)^{-1} \widetilde{C}_{m}^{T} e_{1}\right\|_{F}^{2}, \\
+		&=\alpha_{1}^{2} e_{1}^{T}\left(\mu_{m} \widetilde{C}_{m} \widetilde{C}_{m}^{T}+I_{m+1}\right)^{-2} e_{1}, \\
+		&=R_{m+1} f_{\mu_{m}}.
+		\end{aligned}
+		$$
+	\end{proof}
+	
+	\noindent  The following algorithm summarizes the main steps to compute a regularization parameter and a corresponding regularized solution of (\ref{eq1}), using  Tensor T-GGKB and quadrature rules method for Tikhonov regularization.
+%	\newpage
+	
+	\begin{algorithm}[!h]
+		\caption{ Tensor T-GGKB and quadrature rules method for Tikhonov regularization}\label{TG-GKB}
+		\begin{enumerate}
+			\item {\bf Input.} $\mathscr{A}\in \mathbb{R}^{n\times n \times n_3}$,  $\mathscr {C}$, $\eta\gtrapprox 1$  and  $\varepsilon$.
+			\item {\bf Output.} T-GGKB steps $m$, $\mu_{m}$ and $X_{m,\mu_m}$.
+			\item Determine the orthonormal bases $\mathbb{U}_{m+1}$ and $\mathbb{V}_{m}$ of tensors, and the bidiagonal $C_m$ and $\widetilde{C}_m$
+			matrices  with Algorithm \ref{TG-GK}.
+			\item Determine $\mu_{m}$ that satisfies (\ref{lin22}) with Newton's method.
+			\item  Determine $y_{m,\mu_m}$ by solving  (\ref{leastsq}) and then compute $X_{m,\mu_m}$ by (\ref{Xkmu}).
+		\end{enumerate}
+		
+	\end{algorithm}
+\noindent We comment on the complexity of Algorithm \ref{TG-GMRES(m)} and Algorithm \ref{TG-GKB}. First note that the overall computational cost for Algorithm \ref{TG-GMRES(m)} is dominated by the work required to determine $\mathbb{V}_{m}$   in Algorithm \ref{TGA}. The computational effort required to determine $\mathbb{V}_{m}$ is dominated by the evaluation of $m$  T-products, which demands approximately,   \textcolor{blue}{$O\left(n_1 n_2 n_3 \log n_3 m\right )$} flops  by using Algorithm \ref{algo1}.
+% , the T-product in  Algorithm \ref{TGA}  can be computed in at most $O\left(n_{1}n_{2} n_{3} m\right)$ flops by making use of
+%	the FFT along mode 3. 
+	Concerning  Algorithm \ref{TG-GKB}, the  computational complexity is dominated by the work needed  to determine $\mathbb{U}_{m}$ and $\mathbb{V}_{m}$ in Algorithm \ref{TG-GK},  which demands approximately \textcolor{blue}{$O\left(n_1 n_2 n_3 \log n_3 m\right )$}  flops. We show in the following section that  Algorithm \ref{TG-GMRES(m)} and Algorithm \ref{TG-GKB} solve problem (\ref{eq1}) in a time and cost  less that the ones required when using the method 
+	proposed in \cite{CR} that uses the connection between (standard) 
+	Golub--Kahan bidiagonalization and Gauss quadrature rules for solving large 
+	ill-conditioned linear systems of equations of form (\ref{eq1}).
+
+	\section{Numerical results}
+	This section performs some numerical tests on the methods of Tensor T-Global GMRES(m) and Tensor T-Global Golub Kahan algorithm given by Algorithm \ref{TG-GMRES(m)} and Algorithm \ref{TG-GKB}, rspectively, 
+	when applied to the restoration of blurred and noisy color images and videos. For clarity, we only focus on the formulation of a tensor model (\ref{tr1}), describing the blurring that is taking place in the process of going from the exact to the blurred RGB image.  We recall that an RGB image is just multidimensional array of dimension $m\times n\times 3$ whose entries are the light intensity. Throughout this section, we assume that the the three channels
+	of the RGB image has the same dimensions, and we refer to it as $n\times n\times 3$ tensor. Let $\widehat{X}^{(1)}$, $\widehat{X}^{(2)}$, and $\widehat{X}^{(3)}$ be the $n\times n$ matrices that constitute the three channels of the original error-free color image $\widehat{\mathscr{X}}$, and $\widehat{C}^{(1)}$, $\widehat{C}^{(2)}$, and $\widehat{C}^{(3)}$ the $n\times n$ matrices associated with error-free blurred color image $\widehat{\mathscr{C}}$. Because of some
+	unique features in images, we seek an image restoration model that utilizes blur information,
+	exploiting the spatially invariant properties. Let us also consider that both cross-channel and within-channel blurring  take place in the blurring process of the original image. Let $\tt{vec}$ be the operator  that
+	transforms a matrix  to a vector  by stacking the columns of the matrix from
+	left to right. Then, the full blurring model is described by the following
+	form 
+	\begin{equation}\label{linmodel}
+	\left(\mathbf{A}_{\text {color }} \otimes \mathbf{A^{(1)}}\otimes\mathbf{A^{(2)}}\right) \widehat{\mathbf{x}}=\widehat{\mathbf{c}},
+	\end{equation}
+	where, 
+	$$ \widehat{\mathbf{c}}=\left[\begin{array}{c}
+	\tt{vec}\left(\widehat{\mathbf{C}}^{(1)}\right) \\
+	\tt{vec}\left(\widehat{\mathbf{C}}^{(2)}\right) \\
+	\tt{vec}\left(\widehat{\mathbf{C}}^{(3)}\right)
+	\end{array}\right], \quad \widehat{\mathbf{x}}=\left[\begin{array}{c}
+	\tt{vec}\left(\widehat{\mathbf{X}}^{(1)}\right) \\
+	\tt{vec}\left(\widehat{\mathbf{X}}^{(2)}\right) \\
+	\tt{vec}\left(\widehat{\mathbf{X}}^{(3)}\right)
+	\end{array}\right], $$
+	and 
+	\textcolor{blue}{	$$\mathbf{A}_{\mathrm{color}}=\left[\begin{array}{ccc}
+	a_{\text{rr}} & a_{\text{rg}}& a_{\text{rb}} \\
+	a_{\text{gr}} & a_{\text{gg}} & a_{\text{gb}} \\
+	a_{\text{br}} & a_{\text{bg}} & a_{\text{bb}}
+	\end{array}\right]$$
+	$\mathbf{A}_{\text {color }}$ is the $3\times3$ matrix that models the  cross-channel blurring, where each row sums to one. This matrix is obtained from \cite{HNO}. We consider the special case where $a_{\text{rr}}=a_{\text{gg}}=a_{\text{bb}}$, $a_{\text{gr}}=a_{\text{rg}}$, $a_{\text{br}}=a_{\text{rb}}$, and $a_{\text{bg}}=a_{\text{gb}}$, which gives rise to a cross-channel  circular mixing. } $\mathbf{A^{(1)}}\in\mathbb{R}^{n\times n}$ and $\mathbf{A^{(2)}}\in\mathbb{R}^{n\times n}$ define within-channel blurring and they model
+	the horizontal within blurring and the vertical  within blurring matrices, respectively; for more details see \cite{HNO}. The notation $\otimes$ denotes the Kronecker product of  matrices; i.e. the Kronecker product of a $n\times p$  matrix $A=(a_{ij})$  and a $(s\times q)$ matrix
+	$B=(b_{ij})$,   is defined as the $(ns)\times(pq)$ matrix $A \otimes B = (a_{ij}B)$. By exploiting  the circulant structure  of the cross-channel blurring matrix $\mathbf{A}_{\text {color }}$ and the operators unfold and fold, it can be easily shown that (\ref{linmodel}) can be written in the following tensor form
+	\begin{equation}\label{tensor_form}
+	\mathscr {A}\star_c \widehat{\mathscr{X}}\star_c \mathscr{B}= \widehat{\mathscr{C}},
+	\end{equation}
+	where $\mathscr {A}$ is a 3-way tensor such that  $\mathscr {A}(:,:,1)=\alpha \mathbf{A^{(2)}}$, $\mathscr {A}(:,:,2)=\beta \mathbf{A^{(2)}}$ and $\mathscr {A}(:,:,3)=\gamma \mathbf{A^{(2)}}$ and  $\mathscr {B}$ is a 3-way tensor with $\mathscr {B}(:,:,1)=(\mathbf{A^{(1)}})^T$, $\mathscr {B}(:,:,2)=0$ and $\mathscr {B}(:,:,3)=0$. To test the performance of algorithms, the within blurring matrices $A^{(i)}$  have the following
+	entries 
+	$$a_{k \ell}=\left\{\begin{array}{ll}
+	\frac{1}{\sigma \sqrt{2 \pi}} \exp \left(-\frac{(k-\ell)^{2}}{2 \sigma^{2}}\right), & |k-\ell| \leq r \\
+	0, & \text { otherwise }
+	\end{array}\right.$$
+	Note  that $\sigma$ controls the amount of smoothing, i.e. the larger the $\sigma$,  the more ill posed the problem.  We generated a blurred and noisy tensor image $\mathscr{C}=\widehat{\mathscr{C}}+\mathscr{N},$ where $\mathscr{N}$ is a noise tensor with normally distributed random entries with zero mean and with variance chosen to correspond to a specific noise level $\nu:=\|\mathscr{N}\|_F /\|\widehat{\mathscr{C}}\|_F.$
+	To determine the effectiveness of our solution methods, we evaluate 
+	$$\text{Relative error}=\frac{\left\|\hat{ \mathscr X}-{\mathscr  X}_{\text{restored}}\right\|_{F}}{\|\widehat{ \mathscr X}\|_{F}}$$
+	and the Signal-to-Noise
+	Ratio (SNR) defined by
+	\[\text{SNR}({ \mathscr X}_{\text{restored}})=10\text{log}_{10}\frac{\|\widehat{\mathscr X}-E(\widehat{\mathscr X})\|_F^2}{\|{\mathscr X}_{\text{restored}}-\widehat{\mathscr X}\|_F^2},\]
+	where $E(\widehat{\mathscr X})$ denotes the mean gray-level of the uncontaminated image $\widehat{\mathscr{X}}$. 
+	All computations were carried out using the MATLAB environment on an Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz (8 CPUs) computer with 12 GB of
+	RAM. The computations were done with approximately 15 decimal digits of relative
+	accuracy. 
+	\subsection{Example 1}
+	In this example we present the experimental results recovered by Algorithm \ref{TG-GMRES(m)} and Algorithm \ref{TG-GKB} for the reconstruction of a cross-channel blurred color images that have been contaminated by both within and cross blur, and additive noise. The cross-channel blurring is determined by the matrix 
+	$$\mathbf{A}_{\mathrm{color}}=\left[\begin{array}{ccc}
+	0.8 & 0.10& 0.10 \\
+	0.10 & 0.80 & 0.10 \\
+	0.10& 0.10 & 0.80
+	\end{array}\right].$$
+	 We consider two $\mathrm{RGB}$ images from \textbf{MATLAB}, $\tt papav256$ ($\widehat{\mathscr X}\in\mathbb{R}^{256\times256\times3}$) and  $\tt peppers$ ($\widehat{\mathscr X}\in\mathbb{R}^{512\times512\times3}$). They are shown on  Figure \ref{fig1}. For the within-channel blurring,  we let $\sigma=4$ and $r=6$. The considered  noise levels are $\nu=10^{-3}$ and $\nu=10^{-2}$. The associated blurred and noisy RGB images $\mathscr{C}=\mathscr{A}\ast\widehat{\mathscr{X}}\ast\mathscr{B}+\mathscr{N}$ for noise level $\nu=10^{-3}$ are shown on  Figure \ref{fig2}.  Given the contaminated RGB image $\mathscr{C}$, we would like to recover an approximation of the original RGB image $\widehat{\mathscr X}$.   The restorations for  noise level $\nu=10^{-3}$ are shown on  Figure \ref{fig3} and they are obtained by applying Algorithm \ref{TG-GMRES(m)} implementing the  Tensor T-Global GMRES method, with  $\mathscr{X}_0=\mathscr{O}$, $tol=10^{-6}$, $m=10$ and $\text{Iter}_\text{max}=10$. Using GCV, the computed optimal value for the projected problem  was $\mu_{10}=3.82\times 10^{-5}.$ Table \ref{tab1} compares, the computing time (in seconds),  the relative errors and the SNR of the computed restorations. Note that in this table, the allowed maximum number of outer iterations for Algorithm \ref{TG-GMRES(m)}  with noise level $\nu=10^{-2}$ was $\text{Iter}_\text{max}=4$ and the maximum number of inner iterations was $m=4$.  The restorations obtained with Algorithm \ref{TG-GKB}  are shown on  Figure \ref{fig4}. For the $\tt papav256$ color image, the discrepancy principle with $\eta=1.1$ is satisfied when $m=64$ steps of the Tensor T-GGKB  method (Algorithm \ref{TG-GK}) have been carried out, producing a regularization parameter given by $\mu_m=5.57\times 10^{-5}$. For comparison with existing approaches in the literature, we report in Table \ref{tab1} the results obtained with the method 
+	proposed in \cite{CR}. This method utilizes the connection between (standard) 
+	Golub--Kahan bidiagonalization and Gauss quadrature rules for solving large 
+	ill-conditioned linear systems of equations (\ref{linmodel}) \textcolor{blue}{which equivalent to the tensor problem (\ref{tensor_form}).}  We refer to this method as
+	GKB.  \textcolor{blue}{It is  a solution method based on
+	first reducing $\mathbf{A}_{\text {color }} \otimes \mathbf{A^{(1)}}\otimes\mathbf{A^{(2)}}$ to a small bidiagonal matrix with the aid of Golub–Kahan
+	bidiagonalization (GKB) and then applying the connection between GKB
+	and Gauss-type quadrature rules (the same as the ones in (\ref{Gkfmu})) to determine an approximation of $x_\mu$ that
+	satisfies the discrepancy principle associated to the linear problem  (\ref{linmodel})}. It determines the regularization parameter analogously to Algorithm \ref{TG-GKB}, and uses a similar stopping criterion. \textcolor{blue}{The FFT-based computation of the T-product is  the only difference in Algorithm \ref{TG-GMRES(m)} and Algorithm \ref{TG-GKB}}. We can see that the
+	methods yield restorations of the same quality, but the new proposed methods perform significantly better in terms of cpu-time. \textcolor{blue}{This is due to the fact that the T-product operations need fewer flops (approximately $36mn$ flops) than structure-ignoring evaluation of matrix-vector products with the large matrix $\mathbf{A}_{\text {color }} \otimes \mathbf{A^{(1)}}\otimes\mathbf{A^{(2)}}$ in (\ref{linmodel}) and its transpose, which requires approximately $2 (3m)^{2}(3n)^{2}$ flops}.
+	\begin{table}[htbp]
+		\begin{center}\footnotesize
+			\renewcommand{\arraystretch}{1.3}
+			\begin{tabular}{cccccc}\hline
+				\multicolumn{1}{c}{{RGB images}} &\multicolumn{1}{c}{{Noise level}} & \multicolumn{1}{c}{{Method}}& 
+				\multicolumn{1}{c}{{SNR}} & Relative error& CPU-time (sec) \\ 
+				\hline 
+				\multirow{6}{*}{$\tt papav256$}&\multirow{4}{3em}{$10^{-3}$}&Algorithm \ref{TG-GMRES(m)} &$21.01$&$6.64\times10^{-2}$&$\phantom{1}6.62$\\
+				&&Algorithm \ref{TG-GKB}&$20.41$& $7.12\times10^{-2}$&$\phantom{1}5.87$\\
+				&&GKB&$20.99$&$7.12\times10^{-2}$&$18.61$\\
+				\cline{2-6}
+				&\multirow{4}{3em}{$10^{-2}$}&Algorithm \ref{TG-GMRES(m)}&$18.00$&$9.40\times10^{-2}$&$\phantom{1}1.18$\\
+				&	&Algorithm \ref{TG-GKB}&$17.78$&$9.64\times10^{-2}$&$\phantom{1}1.11$\\
+				&&GKB&$17.78$&$9.64\times10^{-2}$&$5.79$\\
+				\hline 
+				\multirow{6}{*}{$\tt peppers$}&\multirow{4}{3em}{$10^{-3}$}&Algorithm \ref{TG-GMRES(m)} &$19.39$&$5.50\times10^{-2}$&$\phantom{1}24.32$\\
+				&&Algorithm \ref{TG-GKB}&$19.11$& $5.68\times10^{-2}$&$\phantom{1}25.63$\\
+				&&GKB&$19.11$&$5.68\times10^{-2}$&$78.13$\\
+				\cline{2-6}
+				&\multirow{4}{3em}{$10^{-2}$}&Algorithm \ref{TG-GMRES(m)}&$16.23$&$7.92\times10^{-2}$&$\phantom{1}4.59$\\
+				&	&Algorithm \ref{TG-GKB}&$15.61$&$8.50\times10^{-2}$&$\phantom{1}3.39$\\
+				&&GKB&$15.61$&$8.50\times10^{-2}$&$15.16$\\
+				\hline 
+			\end{tabular}
+			\caption{Results for Example 1.}\label{tab1}
+		\end{center}
+	\end{table}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width=5.5in]{rgb_orig.eps}
+			%\includegraphics[width=5in]{papav256.eps}
+			\caption{Example 1: Original RGB images:  $\tt peppers$ (left), $\tt papav256$ (right).}\label{fig1}
+		\end{center}
+	\end{figure}
+	
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width=5.5in]{rgb_blur.eps}
+			%	\includegraphics[width=5in]{papav256rest.eps}
+			\caption{Example 1: Blurred and noisy images, $\tt peppers$ (left), $\tt papav256$ (right).}\label{fig2}
+		\end{center}
+	\end{figure}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width=5.5in]{rgb_gmres.eps}
+			%\includegraphics[width=5in]{papav256rest.eps}
+			\caption{Example 1: Restored images by Algorithm \ref{TG-GMRES(m)}, $\tt peppers$ (left), $\tt papav256$ (right).}\label{fig3}
+		\end{center}
+	\end{figure}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width=5.5in]{rgb_ggkb.eps}
+			%\includegraphics[width=5in]{papav256rest.eps}
+			\caption{Example 1: Restored images by Algorithm \ref{TG-GKB}, $\tt peppers$ (left), $\tt papav256$ (right).}\label{fig4}
+		\end{center}
+	\end{figure}
+	\subsection{Example 2} 
+	In this example, we evaluate the effectiveness of Algorithm \ref{TG-GMRES(m)} and Algorithm \ref{TG-GKB} when applied to the restoration of a color video defined by a sequence of RGB images. Video restoration is the problem of restoring a sequence of $k$ color images (frames). Each frame is represented by a tensor of $n \times n\times3$ pixels. In the present example, we are interested in restoring 10 consecutive frames of a contaminated video. Note that the processing of such given frames, one  at a time, is extremely time consuming. We consider the xylophone video from MATLAB. The video clip is in MP4 format with each frame having $240 \times 240$ pixels. The (unknown) blur- and noise-free frames are stored in the tensor $\widehat{ \mathscr X} \in \mathbb{R}^{240 \times 240\times30}$, obtained by stacking the grayscale images that constitute the three channels of
+	each blurred color frame. These frames are blurred by $\mathscr {A}\star_c \widehat{\mathscr{X}}\star_c \mathscr{B}= \widehat{\mathscr{C}}$, where  $\mathscr {A}$ and $\mathscr {B}$  are a 3-way tensors such that  $\mathscr {A}(:,:,1)= \mathbf{A^{(2)}}$, $\mathscr {B}(:,:,1)= (\mathbf{A^{(1)}})^T$ and $\mathscr {A}(:,:,i)=\mathscr {B}(:,:,i)=0$, for $i=2,...,30$,  using $\sigma=2$ and $r=4$ \textcolor{blue}{to build the blurring matrices with periodic boundary conditions. This gives rises to block circulant with circulant blocks matrices}. We consider white Gaussian noise of levels $\nu=10^{-3}$ or $\nu=10^{-2}$. Figure \ref{frame5ob} shows the 5th exact (original) frame and the contaminated version with noise level $\nu=10^{-3}$, which is to be restored. Table \ref{tab2} displays the performance of Algorithm \ref{TG-GMRES(m)} and Algorithm \ref{TG-GKB}. In Algorithm \ref{TG-GMRES(m)}, we have used as an input for noise level $\nu=10^{-3}$,  $\mathscr{C}$, $\mathscr{X}_0=\mathscr{O}$, $tol=10^{-6}$, $m=10$ and $\text{Iter}_{\text{max}}=10$.The chosen inner and outer iterations for noise level $\nu=10^{-2}$ were $m=4$ and  $\text{Iter}_{\text{max}}=4$, respectively. For the ten outer iterations,  minimizing the GCV function  produces  $\mu_{10}=1.15 \times 10^{-5}$. Using Algorithm \ref{TG-GKB},  the discrepancy principle with $\eta=1.1$ have been satisfied after $m=59$ steps of  T-GGKB method (Algorithm \ref{TG-GK}), producing a regularization parameter given by $\mu_m=1.06\times10^{-4}$. \textcolor{blue}{For comparison with existing approaches in the literature, we report in Table \ref{tab2} the results obtained with the method 
+		proposed in \cite{belguide2}. This method utilizes the connection between the
+		Global Golub--Kahan bidiagonalization and Gauss quadrature rules for solving large 
+		ill-conditioned linear systems of equations (\ref{linmodel}). We refer to this method as
+		GGKB. It determines the regularization parameter analogously to Algorithm \ref{TG-GKB}, and uses a similar stopping criterion. We can see that Algorithm \ref{TG-GKB} yields restorations of the same quality as the GGKB method, but the new proposed methods perform significantly better in terms of cpu-time.} For completeness, the restorations obtained with Algorithm \ref{TG-GMRES(m)} and Algorithm \ref{TG-GKB} are shown on the left-hand and the right-hand side of Figure \ref{frame5r}, respectively.
+\noindent {\bf Acknowledgement}:  
+ We would like to thank again the two Referees for all the valuable  remarks and helpful  suggestions. 
+	
+%\newpage
+	%\section*{References}
+	\begin{thebibliography}{99}
+		\bibitem{belguide}
+		A.H.  Bentbib, M. El Guide, K. Jbilou and L. Reichel, Global Golub--Kahan bidiagonalization applied to large discrete ill-posed problems,
+		J. Comput. Appl. Math., , 322(2017), 46--56.
+		
+		\bibitem{belguide2}
+		A.H. Bentbib, M. El Guide, K. Jbilou, E. Onunwor and L. Reichel, Solution methods for linear discrete ill-posed problems for color image restoration, BIT Num. Math., 58(3)(2018), 555–-576.
+		
+		\bibitem{Braman}
+		K. Braman, Third-order tensors as linear operators on a space of matrices, Lin. Alg. Appl. 433(2010),  1241--1253.
+		
+		
+		
+		
+		\bibitem{brazell} 
+		M. Brazell, N. Li. C. Navasca, C. Tamon,  Solving Multilinear Systems Via Tensor Inversion
+		SIAM J. Matrix Anal. Appl., 34(2)(2013), 542-–570
+		
+		\bibitem{bouyouli} 
+		R. Bouyouli, K. Jbilou, R. Sadaka, H. Sadok,
+		Convergence properties of some block Krylov subspace methods for multiple linear systems, J. Comput. Appl. Math. 196(2006), 498--511.
+		
+		
+		
+		
+		\bibitem{beik1} 
+		F. P. A Beik, F. S. Movahed, S. Ahmadi-Asl, On the Krylov subspace methods based on tensor format for positive definite Sylvester tensor equations, Num. Lin. Alg. Appl., 23(2016), 444–-466.
+		
+		\bibitem{beik2} 
+		F. P. A. Beik, K. Jbilou, M. Najafi-Kalyani and L. Reichel, Golub–Kahan bidiagonalization for ill-conditioned tensor equations with applications. Num.  Algo.,  84(2020), 1535–-1563.
+		
+		
+		
+		\bibitem{bouh}
+		A. Bouhamidi, K. Jbilou, A Sylvester-Tikhonov regularization method for image restauration, J. Compt. Appl. Math., 206(2007), 86--98.
+		
+		
+		\bibitem{reichel2}
+		{ D. Calvetti, P. C. Hansen, and L. Reichel}, { L-curve curvature bounds via Lanczos bidiagonalization}, Electron. Trans. Numer. Anal., 14(2002), 134--149.
+		
+		\bibitem{CR}
+		{\sc D. Calvetti and L. Reichel}, {\it Tikhonov regularization with a solution 
+			constraint}, SIAM J. Sci. Comput., 26(2004),  224--239.
+		\bibitem{reichel1}
+		{D. Calvetti, G. H. Golub, and L. Reichel}, { Estimation of the L-curve via Lanczos 
+			bidiagonalization}, BIT, 39(1999), 603--619.
+		%	 
+		%	 \bibitem{einstein}
+		%	 A. Einstein, The foundation of the general theory of relativity. In: Kox AJ, Klein MJ, Schulmann
+		%	 R, editors. The collected papers of Albert Einstein. Vol. 6, Princeton (NJ): Princeton University
+		%	 Press; 2007, pp. 146--200.
+		
+		%	 \bibitem{fenu1}
+		%	 {C. Fenu, D. Martin, L. Reichel, and G. Rodriguez},  
+		%	 {Block Gauss and anti-Gauss quadrature with application to networks}, SIAM J. Matrix Anal. Appl.,, 34(4)(2013) 1655--1684
+		
+		\bibitem{Elguide}
+		M. El Guide, A. El Ichi, K. Jbilou, F.P.A Beik, Tensor GMRES and  Golub-Kahan Bidiagonalization methods via  the  Einstein product with applications to image and  video processing, arXiv preprint arXiv:2005.07458. 
+		
+		%	\bibitem{ElIchi}
+		%	{ A. El ichi, K. Jbilou, R. Sadaka}, {Tensor Krylov subspace methods using the T-product}, preprint arxiv 2020.	 
+		
+		\bibitem{golub1} 
+		G. H. Golub and C. F. Van Loan, Matrix Computations, 3rd ed., Johns Hopkins University
+		Press, Baltimore, 1996.
+		
+		\bibitem{golubwahba}
+		{ G. H. Golub, M. Heath, G. Wahba}, Generalized
+		cross-validation as a method for choosing a good ridge parameter,
+		, Technometrics 21(1979), 215--223.
+		
+		
+		\bibitem{hansen1}
+		{ P. C. Hansen} { Analysis of discrete ill-posed problems by
+			means of the L-curve}, SIAM Rev., 34(1992), 561--580.
+		
+		
+		\bibitem{hansen2}
+		{ P. C. Hansen} { Regularization tools, a MATLAB package for
+			analysis of discrete regularization problems}, Numer. Algo., 6(1994), 1--35.
+		
+		\bibitem{Hao}
+		N. Hao, M. E. Kilmer, K. Braman and R. C. Hoover, Facial recognition using tensor-tensor decompositions, SIAM J. Ima. Sci., 6(2013), 437--463.
+		
+		
+		%	 \bibitem{huang1}
+		%	 Huang B, Xie Y, Ma C. Krylov subspace methods to solve a class of tensor equations
+		%	 via the Einstein product. Numer Linear Algebra Appl. 2019;26:e2254. %https://doi.org/10.1002/nla.2254%\bibitem{B08} 
+		
+		\bibitem{HNO}
+		P. C. Hansen, J. Nagy, and D. P. O'Leary,  Deblurring Images: Matrices, Spectra, 
+		and Filtering, SIAM, Philadelphia, 2006.
+		
+		
+		\bibitem{jbilou1}
+		{ K. Jbilou A. Messaoudi H. Sadok} {\it Global FOM and GMRES
+			algorithms for matrix equations}, Appl. Num. Math.,  31(1999), 49--63.
+		
+		
+		\bibitem{jbilou2}
+		{ K. Jbilou, H. Sadok, and A. Tinzefte}, {Oblique projection methods for linear 
+			systems with multiple right-hand sides}, Electron. Trans. Numer. Anal., 20(2005) ,119--138.
+		
+		\bibitem{Jbiloubeik1}
+		M. N. Kalyani, F. P.  A. Beik and K. Jbilou, On global iterative schemes based on Hessenberg process for (ill-posed) Sylvester tensor equations, J. Comput. Appl. Math., 373(2020), 112216.
+		
+		
+		\bibitem{kolda1}
+		T. G. Kolda, B. w. Bader, Tensor Decompositions and Applications. SIAM Rev.  3(2009), 455--500 .
+		
+		\bibitem{kolda2}
+		T. Kolda, B. Bader, Higher-order web link analysis using multilinear algebra, in: Proceedings of the Fifth IEEE International
+		Conference on Data Mining, ICDM 2005, IEEE Computer Society, 2005, pp. 242–-249.
+		
+		\bibitem{kimler1}
+		M.E. Kimler and C.D. Martin, Factorization strategies for third-order tensors,  Lin. Alg. Appl., 435(2011), 641–-658.
+		
+		\bibitem{kimler2}
+		M.E. Kilmer, C.D. Martin, L. Perrone, A third-order generalization of the matrix svd as a product of third-order tensors, Tech.
+		Report TR-2008-4, Tufts University, Computer Science Department, 2008.
+		
+		\bibitem{kilmer0}
+		M. E. Kilmer, K. Braman, N. Hao and R. C. Hoover, Third-order tensors as operators
+		on matrices: a theoretical and computational framework with applications in imaging,
+		SIAM J. Matrix Anal. Appl., 34(2013), 148--172.
+		
+		
+		\bibitem{liang1}
+		M. Liang, B. Zheng, 
+		Further results on Moore–Penrose inverses of tensors with application to tensor nearness problems.    Comput. Math.  Appl., 
+		77(5)(2019), 1282--1293.
+		
+		
+		\bibitem{lee1} 
+		N. Lee, A. Cichocki, Fundamental tensor operations for large-scale data analysis using tensor network formats, Mult. Sys. Sign. Pro., 29(2018), 921–-960.
+		
+		
+		\bibitem{lu}
+		C. Lu, J. Feng, Y. Chen, W. Liu, Z. Lin and S. Yan, Tensor Robust Principal Component Analysis with a New Tensor Nuclear Norm, in IEEE Transactions on Pattern Analysis and Machine Intelligence, 42(4)(2020),  925--938.
+		
+		
+		
+		\bibitem{lb}
+		L. De Lathauwer and A. de Baynast, Blind deconvolution of DS-CDMA signals by means of decomposition in rank-(l, L, L) terms, IEEE Trans. Sign.Proc., 56(2008),  1562--1571.
+		
+		\bibitem{lxnm} 
+		Li, X.-T., Ng, M.K.: Solving sparse non-negative tensor equations: algorithms and   applications. Front. Math. China 10(3)(2015), 649–-680.
+		
+		\bibitem{lzqlxn}
+		Luo, Z.-Y., Qi, L.-Q., Xiu, N.-H.: The sparsest solutions to Z-tensor complementarity problems. Optim. Lett. 11(2017), 471–-482.
+		
+		\bibitem{miaoTfunction}
+		Y. Miao, L. Qi and Y. Wei, Generalized Tensor Function via the Tensor Singular Value Decomposition based on the T-Product, Lin. Alg. Appl., 590(2020), 258--303.
+		
+		\bibitem{qllz} 
+		Qi, L.-Q., Luo, Z.-Y.: Tensor analysis: spectral theory and special tensors. SIAM, Philadelphia (2017).
+		\bibitem{sun1} 
+		L. Sun, B. Zheng, C.Bu, Y.Wei, Moore Penrose inverse of tensors via Einstein product, Lin. Mult.  Alg., 64(2016), 686--698.
+		
+		\bibitem{tikhonov}
+		{ A.N. Tikhonov}, {Regularization of incorrectly posed
+			problems}, Soviet Math.,	4(1963), 1624--1627.
+		
+		\bibitem{vt1}
+		M. A. O. Vasilescu and D. Terzopoulos, Multilinear analysis of image ensembles: TensorFaces, in ECCV 2002: Proceedings of the 7th European Conference on Computer Vision, Lecture Notes in Comput. Sci. 2350, Springer, 2002, pp. 447-460.
+		
+		\bibitem{vt2}
+		M. A. O. Vasilescu and D. Terzopoulos, Multilinear image analysis for facial recognition, in ICPR 2002: Proceedings of the 16th International Conference on Pattern Recognition, 2002, pp. 511-514. 
+		
+		\bibitem{wahbagolub}
+		{ G. Wahba},  { Pratical approximation solutions to linear
+			operator equations when the data are noisy}, SIAM J. Numer. Anal.
+		14(1977), 651--667.
+		
+		
+	\end{thebibliography}
+	
+\end{document} 
